@@ -1,0 +1,26 @@
+-Résumé (à rendre 10 jours avant)
+
+
+-Dossier professionnel: dossier émis par le ministère du travail que l'on doit remplir 
+(front et back, qu'est ce qu'on a fait en front et qu'est ce qu'on a fait en back) PENDANT LA FORMATION, dans la formation
+et uniquement dans la formation
+par exemple en front qu'est ce qu'on a maquetté, utilisation du logiciel figma avec le lien de figma, dire avec qui on l'a fait.
+les difficulté rencontrés pendant ce projet.
+
+par exemple ecf, maquette + intégration web, mettre les deux maquettes (web et mobile)
+
+La partie back end: DU PHP-POO-PDO avec IMPERATIVEMENT UN CRUD (create read uodate Delete) ! OBLIGATOIRE! 
+Deux ou trois exos fait en PHP PENDANT LA FORMATION
+
+-dossier Projet: C'est le rapport de Stage, faire une Page de garde (Logo de l'AFCI, logo de l'entreprise (le premier à gauche le deuxième à droite),
+Dossier projet en titre, le nom-Prénom en dessous
+Date de début de formation-date de fin de formation.
+
+deuxième page, table des matières
+
+Présentation de l'entreprise (si grande entreprise)
+
+Ensuite:Déroulé du stage
+Cahier des charges, création de bdd, (si pas de bdd passer directement aux) modules fait
+
+Ajouter projets perso à la fin

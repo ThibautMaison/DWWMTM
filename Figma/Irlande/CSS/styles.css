@@ -1,0 +1,19 @@
+h1{
+    color: orange;
+    font-size: 33px
+}
+body header img{
+    margin-left: 144px;
+    margin-right: 144px;
+}
+section{
+    margin-left: 344px;
+    margin-right: 344px;
+}
+p.PARAPETIT{
+    margin-left: 200px;
+    font-size: 18px;
+}
+p.principal{
+    margin-left: 200px;
+}

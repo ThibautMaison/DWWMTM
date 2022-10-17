@@ -1,19 +1,81 @@
+html{
+    background-color: darkslategrey;
+}
+
+body{
+    margin-left: 175px;
+    margin-right: 175px;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+header img{
+max-width: 1500px;
+}
+
+div.fonddepage{
+    background-color: white;
+}
+
 h1{
     color: orange;
-    font-size: 33px
+    font-size: 52px;
+    margin-left: 300px;
+    font-weight: 100;
+    padding-top: 50px;
 }
-body header img{
-    margin-left: 144px;
-    margin-right: 144px;
+
+strong{
+    font-size: 33px;
+    font-weight: 800;
+    color: #7AAD9B;
 }
-section{
-    margin-left: 344px;
-    margin-right: 344px;
+
+section img{
+    margin-left: 155px;
+    margin-right: 500px;
+    max-width: 1200px;
 }
+
 p.PARAPETIT{
-    margin-left: 200px;
     font-size: 18px;
+    margin-left: 275px;
+    margin-right: 275px;
+    font-weight: 600;
+    font-size: 26px;
 }
+
 p.principal{
-    margin-left: 200px;
+    margin-left: 275px;
+    margin-right: 275px;
+    font-weight: 600;
+    font-size: 26px;
+}
+
+p.sousparagraphe{
+    margin-left: 150px;
+    margin-right: 275px;
+    border-left: 1px solid black;
+    padding-left: 20px;
+    font-weight: lighter;
+    font-size: 26px;
+}
+
+em{
+    color: #7AAD9B;
+}
+
+h2{
+    margin-left: 175px;
+    color: #7AAD9B;
+    font-size: 36px;
+
+}
+
+ul{
+    font-weight: 800;
+    margin-left: 300px;
+    margin-right: 300px;
+    padding: 50px;
+
 }

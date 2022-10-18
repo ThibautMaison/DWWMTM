@@ -1,17 +1,17 @@
-body{
+body {
     background-color: white;
-    width: auto;
 }
 
-div.PAGE{
+div.PAGE {
     background-color: #FF8500;
     margin-left: 200px;
     margin-right: 200px;
     font-family: 'Roboto', sans-serif;
     padding: 50px;
+
 }
 
-h1{
+h1 {
     color: white;
     margin-left: 150px;
     font-weight: 950;
@@ -19,7 +19,7 @@ h1{
     padding-top: 50px;
 }
 
-p{
+p {
     color: white;
     margin-left: 150px;
     margin-right: 100px;
@@ -27,17 +27,18 @@ p{
     padding: auto;
 }
 
-h2{
+h2 {
     margin-left: 150px;
     font-weight: 750;
     font-size: 40px;
 }
 
-ul{
+ul {
     margin-left: 200px;
     font-weight: 750;
 }
-p.PETITPARA{
+
+p.PETITPARA {
     margin-left: 350px;
     margin-top: 70px;
     margin-bottom: 70px;
@@ -46,11 +47,12 @@ p.PETITPARA{
     border-bottom: 1px solid black;
     padding: 20px;
     font-size: 24px;
+}
 
-}ul li{
+ul li {
     padding: 10px;
 }
 
-footer{
+footer {
     padding-top: 25px;
 }

@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    font-family: 'Work Sans', sans-serif;
+}
+
+a {
+    color: inherit;
+}
+
+.btn {
+    text-decoration: none;
+    border: 1px solid darksalmon;
+    color: darksalmon;
+    padding: 10px 15px;
+    margin-top: 15px;
+    display: inline-block
+}
+
+h1,
+h2 {
+    font-family: 'Amatic SC', cursive;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+p,
+li {
+    line-height: 180%;
+}
+header {
+    background-image: url(../img/pyramides.jpeg);
+    background-position: center;
+    background-size: cover;
+    padding: 150px;
+    color: white;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 70px;
+    line-height: 100%;
+    margin-bottom: 20px;
+}
+
+main section#concept {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+main section#concept img {
+    width: 30%;
+    margin-left: 10%;
+}
+
+main section#intro {
+    display: flex;
+    align-items: center;
+}
+
+main section#intro img {
+    width: 30%;
+    margin-right: 10%;
+}
+
+main section#prices {
+    text-align: center;
+}
+
+main section#prices ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+main section#prices ul li {
+    width: calc(30% - 40px);
+    border: 1px solid darksalmon;
+    padding: 20px;
+}
+
+main section#prices p:first-of-type {
+    font-size: 40px;
+    line-height: 100%;
+    color: darksalmon
+}
+
+main section#prices p:first-of-type sup {
+    font-size: 0.3em;
+    color: black
+}

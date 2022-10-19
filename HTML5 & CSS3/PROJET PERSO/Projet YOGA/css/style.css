@@ -1,0 +1,161 @@
+body {
+  font-family: "Raleway", sans-serif;
+  max-width: 1060px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+h2 {
+  color: #6e8e9b;
+  font-family: "Mandali", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+}
+h2::after {
+  content: "";
+  width: 3px;
+  height: 40px;
+  background-color: #6e8e9b;
+  display: block;
+  margin: 20px 0 20px 3px;
+}
+
+.btn {
+  background-color: white;
+  color: black !important;
+  padding: 8px 15px;
+  border-radius: 50px;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  border: none;
+}
+.btn:hover,
+main #contact form input[type="radio"]:checked + label {
+  background-color: #6e8e9b;
+  color: white !important;
+}
+
+header {
+  background-image: url(../img/yogamat.jpg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 20px;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header nav ul {
+  display: flex;
+}
+
+header nav ul li {
+  margin-left: 30px;
+}
+
+header div {
+  text-align: center;
+  margin: 130px 0;
+}
+
+header h1 {
+  font-family: "Mandali", sans-serif;
+  text-transform: uppercase;
+  font-size: 80px;
+  letter-spacing: 8px;
+  line-height: 100%;
+  margin: 0;
+}
+
+main #classes article {
+  display: flex;
+  align-items: center;
+}
+
+main #classes article img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  object-position: 75%;
+  margin-right: 50px;
+}
+
+main #concept ul li {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 991px) {
+  main #concept ul li:nth-of-type(odd) {
+    flex-direction: row-reverse;
+  }
+}
+
+main #concept ul li img {
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 100%;
+  width: 80px;
+  margin: 50px;
+}
+
+main #contact form li {
+  margin-bottom: 30px;
+}
+
+main #contact form input[type="radio"] {
+  display: none;
+}
+
+main #contact form label.btn {
+  margin-left: 20px;
+}
+
+
+main #contact form input[type="text"],
+main #contact form input[type="email"] {
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.3) inset;
+  border: none;
+  padding: 10px 15px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 50px;
+}
+
+main #contact form input,
+main #contact form select {
+  font-family: "Raleway", sans-serif;
+}
+
+footer {
+  background-color: #6e8e9b;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 767px) {
+  header h1 {
+    font-size: 50px;
+  }
+
+  main #classes article {
+    align-items: flex-start;
+  }
+  main #classes article img {
+    margin-right: 20px;
+  }
+
+  main #concept ul li {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  main #concept ul li img {
+    margin-bottom: 10px;
+  }
+}

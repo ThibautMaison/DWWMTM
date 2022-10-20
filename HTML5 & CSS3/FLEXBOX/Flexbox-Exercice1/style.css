@@ -1,0 +1,110 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
+
+body {
+  font-family: Raleway, sans-serif;
+  height: 100vh;
+  background: #222;
+}
+
+.info-section {
+  color: #f1f1f1;
+  text-align: center;
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+.section-flex {
+  padding-bottom: 400px;
+}
+
+/* Exemples flex */
+
+.container-flex  {
+  width: 800px;
+  height: 500px;
+  margin: 150px auto;
+  background: #ffcb9a;
+  display: flex;
+}
+
+.item-flex {  
+  background: crimson;
+  width: 150px;
+  height: 150px;
+  margin: 5px;
+}
+
+
+/* Exemple #1 */
+.a2{
+  flex-grow: 1
+}
+
+
+/* Exemple #2 */
+.containerB {
+flex-wrap: wrap;
+justify-content: center;
+align-content: center
+
+}
+
+.b1, .b2 , .b4, .b5{
+  flex-basis: 350px;
+}
+
+
+.b3{
+  flex-basis: 710px;
+}
+
+
+/* Exemple #3 */
+
+.containerC {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+
+.containerC .item-flex{
+  flex-basis: 500px;
+  height: 65px;
+}
+
+
+/* Exemple #4 */
+
+.containerD {
+  height: 460px;
+  width: 600px; 
+  justify-content: space-between;
+}
+
+
+.containerD .item-flex {
+  width: 150px;
+  height: 150px;
+}
+
+.d2{
+  align-self: center; 
+    
+}
+
+
+.d3{
+  align-self: flex-end;
+}
+
+
+
+

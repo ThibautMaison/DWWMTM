@@ -1,0 +1,50 @@
+html{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: red;
+}
+
+.container1{
+    background-color: yellow;
+    h2{
+        font-size: 35px;
+        color: violet;
+    }
+    p{
+        font-size: 35px;
+        color: purple;
+        :nth-of-type(1){
+            color: red;
+            span{
+                color: blue;
+            }
+        }
+        :nth-of-type(2){
+            color: blue;
+        }
+    }
+    :nth-of-type(1){
+        color: red;
+        span{
+            color: blue;
+        }
+    }
+    :nth-of-type(2),(3){
+        color: blue;
+    }
+}
+
+.container2{
+    background-color: aqua;
+    h2{
+        font-size: 100px;
+        color: green;
+    }
+    :nth-child(1){
+        color: yellow;
+    }
+}

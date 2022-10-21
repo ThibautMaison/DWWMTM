@@ -3,16 +3,6 @@ body {
     height: 100vh;
     background: #222;
   }
-  
-  .info-section {
-    color: #f1f1f1;
-    text-align: center;
-    font-size: 40px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: 50px;
-    margin-bottom: 100px;
-  }
-  
   .container-flex  {
     width: 800px;
     height: 900px;
@@ -26,50 +16,38 @@ body {
     align-content: center;
     flex-wrap: wrap;
     justify-content: space-between;
-  }
-  
+  } 
   .item-flex {
     border: 1px solid black;
     width: 150px;
     height: 150px;
     margin: 20px 10px;
   }
-
 .a1{
     background-color: orange;
     width: 375px;
 }
-
 .a2{
     background-color: gray;
     width: 375px;
 }
-
 .a3{
     background-color: yellow;
     width: 1200px
 }
-
 .a4, .a5, .a6, .a7{
     background-color: orange;
 }
-
-
 .a8{
     background-color: yellow;
     width: 375px;
-
 }
-
 .a9{
     background-color: yellow;
     width: 375px;
-
 }
-
 .a10{
     background-color: green;
     width: 1200px
-
 }
 

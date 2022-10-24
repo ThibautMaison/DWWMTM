@@ -120,7 +120,6 @@ ul {
   font-size: 23px;
   font-weight: 200;
   padding-bottom: 50px;
-  margin-right: 50px;
 }
 
 .pagestar img {
@@ -156,7 +155,6 @@ ul {
   font-size: 23px;
   font-weight: 200;
   padding-bottom: 50px;
-  margin-right: 50px;
   color: white;
 }
 
@@ -166,7 +164,7 @@ ul {
   max-height: 400px;
 }
 
-div.pagewoman ul li {
+.pagewoman ul li {
   color: white;
   font-size: 23px;
 }
@@ -194,3 +192,170 @@ footer span {
   color: #efe784;
 }
 
+@media screen and (max-width:748px){ 
+  header{
+    margin: 0 10px;
+    background-image: url(/image/ImgMobile/header\ 1.png);
+  }
+  header img {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 400px;
+
+  }
+  h1 {
+    color: #efe784;
+    margin-left: 130px;
+  }
+  .intro {
+    background-color: #3e3838;
+    margin: 0 10px;
+  }
+  .pageintro, .pageavengers, .pagestar, .pagewoman {
+    margin: 0 30px;
+  }
+  .intro h2 {
+    display: flex;
+    justify-content: center;
+    color: #efe784;
+    font-size: 40px;
+    border-top: 1px solid #efe784;
+    border-bottom: 1px solid #efe784;
+    letter-spacing: 20px;
+    font-weight: lighter;
+  }
+  .avengers {
+    background-color: #d9d9d9;
+    margin: 0 10px;
+  }
+  .pageavengers h2 {
+    display: flex;
+    align-items: center;
+    color: #6cbcb3;
+    font-size: 50px;
+  }
+  .pageavengers img, .pagestar img, .pagewoman img  {
+    margin: 0 10px;
+    width: 650px;
+  }
+  .star{
+    background-color: #6cbcb3;
+    margin: 0 10px;
+  }
+  .woman{
+    background-color: #3e3838;
+    margin: 0 10px;
+  }
+  footer{
+    margin: 0 10px;
+  }
+  footer img{
+    width: 150px;
+  }
+}
+
+@media screen and (max-width:360px){ 
+  header{
+    margin: 0 5px;
+    background-image: url(/image/ImgMobile/header\ 1.png);
+    height: 150px;
+  }
+  header img {
+    width: 150px;
+    padding-top: 30px;
+    padding-bottom: 0
+
+  }
+  h1 {
+    color: #efe784;
+    margin-left: 117px;
+    font-size: 20px;
+    letter-spacing: normal;
+    padding-top: 25px;
+  }
+  .intro {
+    background-color: #3e3838;
+    margin: 0 5px;
+  }
+  .pageintro, .pageavengers, .pagestar, .pagewoman {
+    margin: 0 15px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    
+  }
+  .intro h2 {
+    color: #efe784;
+    margin-left: 165px;
+    border-top: 1px solid #efe784;
+    border-bottom: 1px solid #efe784;
+    font-weight: bold;
+    font-size: 13px;
+    padding-bottom: 20px;
+  }
+  .intro p, .avengers p, .star p, .woman p{
+    font-size: 12px;
+    padding-bottom: 10px;
+  }
+  .avengers {
+    background-color: #d9d9d9;
+    margin: 0 5px;
+  }
+  .pageavengers h2 {
+    display: flex;
+    justify-content: center;
+    color: #6cbcb3;
+    font-size: 20px;
+    padding-right: 0;
+  }
+  .pageavengers img, .pagestar img, .pagewoman img  {
+    margin: 0;
+    width: 320px;
+    height: 150px;
+  }
+
+  ul{
+    padding-top: 0;
+  }
+  .pageavengers ul li, .pagestar ul li, .pagewoman ul li{
+    font-size: 10px;
+    padding: 0 auto;
+  }
+  .star{
+    background-color: #6cbcb3;
+    margin: 0 5px;
+  }
+  .pagestar{
+    margin: 0 15px;
+  }
+  .pagestar h2{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+  }
+  .woman{
+    background-color: #3e3838;
+    margin: 0 5px;
+  }
+  .woman h2{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    }
+  .woman p{
+    padding-right: 0;
+  }
+  footer{
+    margin: 0 5px;
+  }
+  footer img{
+    width: 80px;
+    height: 20px;
+    margin-left: 50px;
+  }
+  footer p{
+    font-size: 10px;
+    margin-left: 50px;
+    padding-bottom: 80px;
+  }
+}

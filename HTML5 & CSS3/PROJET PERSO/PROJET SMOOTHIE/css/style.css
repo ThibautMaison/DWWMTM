@@ -57,42 +57,48 @@ header h1 {
     letter-spacing: 5px;
 }
 
-#devise {
+.devise {
     display: flex;
     margin: 50px auto;
     align-items: center;
+    max-width: 1060px;
+    margin: 10px auto;
 }
 
-#devise img {
+.devise img {
     width: 30%;
     margin-right: 30px;
 }
 
-#fabrication {
+.fabrication {
     background: linear-gradient(#FEB4C3, #F59E28);
     padding: 50px 0;
     color: white;
 }
 
-#fabrication ul {
+.fabrication ul {
     padding: 0;
 }
 
-#fabrication ul li {
+.fabrication ul li {
     text-align: center;
     margin: 80px auto;
+}
+.items{
+    max-width: 1060px;
+    margin: 10px auto;
 }
 
 
 
-#items ul {
+.items ul {
     padding: 50px 0;
     display: flex;
     text-align: center;
     justify-content: space-between;
 }
 
-#items ul li {
+.items ul li {
     width: 30%;
 }
 
@@ -110,21 +116,21 @@ footer {
         max-width: 90%;
     }
 
-    #devise {
+    .devise {
         flex-direction: column;
         text-align: center;
     }
 
-    #devise img {
+    .devise img {
         width: 50%;
         margin: 0;
     }
 
-    #items ul {
+    .items ul {
         flex-direction: column;
     }
 
-    #items ul li {
+    .items ul li {
         width: 100%
     }
 }

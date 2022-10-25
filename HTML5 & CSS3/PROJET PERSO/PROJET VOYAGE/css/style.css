@@ -44,51 +44,51 @@ header h1 {
     margin-bottom: 20px;
 }
 
-main section#concept {
+.concept {
     display: flex;
     align-items: center;
     padding-left: 20px;
 }
 
-main section#concept img {
+.concept img {
     width: 30%;
     margin-left: 10%;
 }
 
-main section#intro {
+.intro {
     display: flex;
     align-items: center;
 }
 
-main section#intro img {
+.intro img {
     width: 30%;
     margin-right: 10%;
 }
 
-main section#prices {
+.prices {
     text-align: center;
 }
 
-main section#prices ul {
+.prices ul {
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: space-around;
 }
 
-main section#prices ul li {
+.prices ul li {
     width: calc(30% - 40px);
     border: 1px solid darksalmon;
     padding: 20px;
 }
 
-main section#prices p:first-of-type {
+.prices p:first-of-type {
     font-size: 40px;
     line-height: 100%;
     color: darksalmon
 }
 
-main section#prices p:first-of-type sup {
+.prices p:first-of-type sup {
     font-size: 0.3em;
     color: black
 }

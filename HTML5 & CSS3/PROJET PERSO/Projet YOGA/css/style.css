@@ -30,7 +30,7 @@ h2::after {
   border: none;
 }
 .btn:hover,
-main #contact form input[type="radio"]:checked + label {
+.contact form input[type="radio"]:checked + label {
   background-color: #6e8e9b;
   color: white !important;
 }
@@ -71,12 +71,12 @@ header h1 {
   margin: 0;
 }
 
-main #classes article {
+.classes article {
   display: flex;
   align-items: center;
 }
 
-main #classes article img {
+.classes article img {
   width: 250px;
   height: 250px;
   object-fit: cover;
@@ -84,7 +84,7 @@ main #classes article img {
   margin-right: 50px;
 }
 
-main #concept ul li {
+.concept ul li {
   display: flex;
   align-items: center;
 }
@@ -95,7 +95,7 @@ main #concept ul li {
   }
 }
 
-main #concept ul li img {
+.concept ul li img {
   box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.3);
   padding: 15px;
   border-radius: 100%;
@@ -103,21 +103,21 @@ main #concept ul li img {
   margin: 50px;
 }
 
-main #contact form li {
+.contact form li {
   margin-bottom: 30px;
 }
 
-main #contact form input[type="radio"] {
+.contact form input[type="radio"] {
   display: none;
 }
 
-main #contact form label.btn {
-  margin-left: 20px;
+.contact form label.btn {
+main #  margin-left: 20px;
 }
 
 
-main #contact form input[type="text"],
-main #contact form input[type="email"] {
+.contact form input[type="text"],
+.contact form input[type="email"] {
   box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.3) inset;
   border: none;
   padding: 10px 15px;
@@ -126,8 +126,8 @@ main #contact form input[type="email"] {
   border-radius: 50px;
 }
 
-main #contact form input,
-main #contact form select {
+.contact form input,
+.contact form select {
   font-family: "Raleway", sans-serif;
 }
 
@@ -143,19 +143,19 @@ footer {
     font-size: 50px;
   }
 
-  main #classes article {
+.classes article {
     align-items: flex-start;
   }
-  main #classes article img {
+.classes article img {
     margin-right: 20px;
   }
 
-  main #concept ul li {
+.concept ul li {
     flex-direction: column;
     text-align: center;
   }
 
-  main #concept ul li img {
+.concept ul li img {
     margin-bottom: 10px;
   }
 }

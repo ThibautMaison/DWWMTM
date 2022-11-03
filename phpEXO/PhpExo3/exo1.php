@@ -1,12 +1,10 @@
 <?php
 $nombre = readline ('entrez un nombre :');
 
-if ($nombre >0)
-{
+if ($nombre >0){
     echo ("positif");
 }
-else
-{
+else{
     echo ("negatif");
 }
 

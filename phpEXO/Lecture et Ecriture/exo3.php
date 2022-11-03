@@ -1,7 +1,7 @@
 <?php
-$prixHT = (float)readline ('entrez un prixHT :');
-$nbA = (int)readline ('entrez un nbA :');
-define ("TVA",20/100);
+$prixHT = readline ('entrez un prixHT :');
+$nbA = readline ('entrez un nbA :');
+define ("TVA",1.2);
 $prixTTC = $prixHT * $nbA * TVA ;
 
 

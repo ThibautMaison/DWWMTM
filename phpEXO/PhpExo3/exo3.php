@@ -1,17 +1,13 @@
 <?php
 $nombre = readline ('entrez un nombre :');
 
-if ($nombre ==0)
-{
+if ($nombre ==0){
     echo "null";
 }
-elseif ($nombre <0)
-{
+elseif ($nombre <0){
     echo "negatif";
 }
-else
-{
+else{
     echo"positif";
 }
-
 ?>

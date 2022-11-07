@@ -1,5 +1,5 @@
 <?php
-$nb1 = readline(" entrez un premier nombre de votre choix");
+$nb1 = readline("entrez un premier nombre de votre choix");
 $nb2 = readline("entrez un deuxième nombre de votre choix");
 
 $nba = $nb1;

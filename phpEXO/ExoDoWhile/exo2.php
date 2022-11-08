@@ -10,7 +10,7 @@ do{
         echo "plus grand !";
         $nombre = readline ("entrez un nombre entre 10 et 20:");
     }
-    while(($nombre <=10) or ($nombre >=20));
 }
+    while(($nombre <=10) or ($nombre >=20));
     echo "bravo";
 ?>

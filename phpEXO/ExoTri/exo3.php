@@ -1,25 +1,20 @@
 <?php
 $tab = [4,8,7,9,1,5,4,6];
 
-    for( $i=0; $i<=count($tab) ; $i++ ){
-        $temp = $tab[0] ;
-        $tab[0] =$tab[7];
-        $tab[7] =$temp;
-        $temp = $tab[1] ;
-        $tab[1] =$tab[6];
-        $tab[6] =$temp;
-        $temp = $tab[2] ;
-        $tab[2] =$tab[5];
-        $tab[5] =$temp;
-        $temp = $tab[3] ;
-        $tab[3] =$tab[4];
-        $tab[4] =$temp;
-
-    }
-    for($i=0;$i<count($tab);$i++){
-        echo $tab[$i] . "\n";
-    }
-
-
-
+if(count($tab) %2 != 0){
+    $middle = (count($tab) -1) /2;
+    for( $i=1; $i<=$middle ; $i++ ){
+        $temp = $tab[$middle - $i];
+        $tab[$middle - $i] = $tab[$middle + $i];
+        $tab[$middle + $i] = $temp;
+        }
+}
+else{
+    $middle = (count($tab) /2);
+    for( $i=1; $i<=$middle + 1 ; $i++ ){
+        $temp = $tab[$i -1];
+        $tab[$i -1] = $tab[count($tab) - $i];
+        $tab[count($tab) - $i] = $temp;
+        }
+}
 ?>

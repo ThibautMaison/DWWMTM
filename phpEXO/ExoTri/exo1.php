@@ -22,10 +22,7 @@ while($estvrai){
 foreach($tableau as $valeur){
     echo $valeur . "\n";
 }
-
-    if($flag){
-        echo " Les nombres sont consécutifs ! ";
-        else{
-            echo " Les nombres ne sont pas consécutifs ! ";
-        }
+for ($i=0;$i<=count($tableau)-2;$i++){
+    if($tableau[$i] = $tableau[$i+1]){
     }
+}

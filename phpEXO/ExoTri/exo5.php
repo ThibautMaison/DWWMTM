@@ -1,21 +1,12 @@
 <?php
-$tableau = [];
-$estvrai = true;
-for($i=0;$i<3;$i++){
-    $nombre = readline("Entrez un nombre:");
-    $tableau[$i] = $nombre;
+$tableau = [4,8,4,8,4];
+ for ($i=0; $i < count($tableau) ; $i ++ ){
+    $var = $tableau[$i];
+    for ($j=$i; $j < count($tableau) -1 ; $j++ ){
+        if ($tableau[$j + 1] == $tableau[$i]){
+            return"doublon";
+    }
+    }
+    return"pas de doulon";
 }
- for( $i=1; $i<count($tableau) ; $i++ ){
-     if($nombre == $tableau[$i]){
-         echo "il y a un ou plusieurs doublons";
-     }
- }
-// while($estvrai){
-//     $estvrai = false;
-//     for ($i=0;$i<count($tableau);$i++){
-//         if($nombre == $tableau[$i]){ 
-//             $estvrai = true;
-//         }
-//     }
-// }
 ?>

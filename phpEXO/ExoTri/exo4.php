@@ -1,9 +1,9 @@
 <?php
-$tableau = ["tt","ttt","tttt","ttttt","tttttt"];
-$nom = readline(" entrez un nom! ");
-for( $i=1; $i<=count($tableau) ; $i++ ){
-    if($nombre == $tableau[$i]){
-        echo ;
+$tab = ["Marraine","Walid","Thibaut","Fred","Maxime","Kesary","Damien","Manon"];
+$chercher = readline("Cherchez prénom ");
+for( $i = 0 ; $i<count($tab);$i++){
+    if($chercher == $tab[$i]){
+        echo $i . "   "   . $chercher ;
     }
 }
 ?>

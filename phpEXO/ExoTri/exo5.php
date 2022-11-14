@@ -1,12 +1,22 @@
 <?php
-$tableau = [4,8,4,8,4];
- for ($i=0; $i < count($tableau) ; $i ++ ){
-    $var = $tableau[$i];
-    for ($j=$i; $j < count($tableau) -1 ; $j++ ){
-        if ($tableau[$j + 1] == $tableau[$i]){
-            return"doublon";
-    }
-    }
-    return"pas de doulon";
+$tab = [4,8,7,9,3,12];
+$comp = 0;
+
+for($i = 0 ; $i < count($tab) ; $i++){
+    for($index = $i ; $index < count($tab)-1 ; $index++){
+        if($tab[$i] == $tab[$index+1]){
+            $comp++ ;
+
+        }
+
 }
+}
+echo $comp . " " ;
+if($comp>0){
+    echo "doublon";
+}
+elseif($comp == 0){
+    echo "pas de doublon";
+}
+
 ?>

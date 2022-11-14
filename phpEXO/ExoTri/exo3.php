@@ -1,20 +1,27 @@
 <?php
-$tab = [4,8,7,9,1,5,4,6];
 
-if(count($tab) %2 != 0){
-    $middle = (count($tab) -1) /2;
-    for( $i=1; $i<=$middle ; $i++ ){
-        $temp = $tab[$middle - $i];
-        $tab[$middle - $i] = $tab[$middle + $i];
-        $tab[$middle + $i] = $temp;
-        }
+$tab = [41, 33, 3, 2, 7, 22, 19, 1, 97, 71, 8, 25];
+$x = 1;
+
+if (count($tab)%2==0) {
+
+    for ($i=0; $i<(count($tab)/2); $i++) {
+        $temp = $tab[count($tab)-$x];
+        $tab[count($tab)-$x] = $tab[$i];
+        $tab[$i] = $temp;
+        $x++;
 }
-else{
-    $middle = (count($tab) /2);
-    for( $i=1; $i<=$middle + 1 ; $i++ ){
-        $temp = $tab[$i -1];
-        $tab[$i -1] = $tab[count($tab) - $i];
-        $tab[count($tab) - $i] = $temp;
-        }
+} else {
+    for ($i=0;$i<(count($tab)/2)-0.5;$i++){
+        $garde=$tab[$i];
+        $tab[$i]=$tab[count($tab)-$x];
+        $tab[count($tab)-$x]=$garde;
+        $x++;
+    }
 }
+
+foreach($tab as $valeur) {
+    echo $valeur . "\n";
+}
+
 ?>

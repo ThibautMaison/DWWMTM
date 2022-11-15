@@ -9,8 +9,6 @@ $tabNotes = array(
 'paul' => array(16,1,15),
 );
 foreach($tabNotes as $key => $value){
-    foreach($value as $notes ){
-    }
 echo "la moyenne de " . $key  . " est de : " . array_sum($value) / count($value);
 echo "\n";
 }

@@ -7,6 +7,7 @@ $tabNotes = array(
 'dupont' => array(16,12,17),
 'paul' => array(16,1,15),
 );
+$nom = readline("entrez un nom:");
 foreach($tabNotes as $key => $value){
     foreach($value as $notes ){
     }

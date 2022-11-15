@@ -23,19 +23,20 @@ switch ($nombre){
         break;
     case 2:
         foreach($tabNotes as $key => $value){
-            foreach($value as $notes ){
-            }
+            // foreach($value as $notes ){
+            // }
         echo "la moyenne de " . $key  . " est de : " . array_sum($value) / count($value);
         echo "\n";
         }
         break;
     case 3: 
+        $nom = readline("entrez un nom:");
         foreach($tabNotes as $key => $value){
             foreach($value as $notes ){
             }
             if($nom == $key){
-                echo "la moyenne de " . $nom  . " est de : " . array_sum($value) / count($value);
-            }
+            echo "la moyenne de " . $nom  . " est de : " . array_sum($value) / count($value);
+        }
         };
         break;;
 }

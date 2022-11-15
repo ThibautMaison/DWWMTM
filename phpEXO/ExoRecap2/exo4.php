@@ -8,8 +8,4 @@ for($i = 0 ; $i <= $valeur ; $i++){
         echo " est la rÃ©ponse" ;
     }
 }
-
-
-
-
 ?>

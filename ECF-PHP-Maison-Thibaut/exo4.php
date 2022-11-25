@@ -10,18 +10,15 @@ $tab = array('Hydrogène' =>'H',
 'Xénon' =>'X',
 'Radon' =>'Rn',
 'Zirconium' =>'Zr',); 
-
 echo "*********** Tableau périodique des éléments chimiques***********" ;;
 // affichage du tableau 
 foreach($tab as $key => $valeur ){
     echo  "\n";
     echo $valeur . " : " .  $key  ;
 }
-
 echo  "\n";
 echo "**********************" . "\n" ;
 echo "Tableau trié :";
-
 // affichage du tableau trié
 ksort($tab);
 foreach($tab as $key => $valeur ){

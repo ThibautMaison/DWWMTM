@@ -38,6 +38,10 @@
           <a class="dropdown-item" href="ExoMoyen2.php">Exo2</a>
           <a class="dropdown-item" href="ExoMoyen3.php">Exo3</a>
           <a class="dropdown-item" href="ExoMoyen4.php">Exo4</a>
+          <a class="dropdown-item" href="ExoMoyen5.php">Exo5</a>
+          <a class="dropdown-item" href="ExoMoyen5bis.php">Exo5bis</a>
+          <a class="dropdown-item" href="ExoMoyen6.php">Exo6</a>
+          <a class="dropdown-item" href="ExoMoyen7.php">Exo7</a>
         </div>
       </li>
       <li class="nav-item dropdown">

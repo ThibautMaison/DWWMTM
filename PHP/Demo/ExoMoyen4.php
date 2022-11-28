@@ -1,5 +1,5 @@
 <?php ob_start() ?>
-<form action="" method="GET">
+<form action="" method="POST">
     <button type="submit" name="animaux">tout les animaux</button>
     <button type="submit" name="chien">chien</button>
     <button type="submit" name="chat">chat</button>
@@ -11,7 +11,7 @@ $tab = array(
     'Riri' => array("10", "chat"),
     'Fifi' => array("8", "chien"),
 );
-if (isset($_GET["animaux"])) {
+if (isset($_POST["animaux"])) {
 foreach($tab as $key => $value){
     ?>  <h1>Nom :   <?=$key ?></h1><?php
     ?>  <h1>Age :   <?= $value[0] ?></h1> <?php
@@ -19,7 +19,7 @@ foreach($tab as $key => $value){
     ---------------------------------<?php
     }
 }
-if (isset($_GET["chat"])) {
+if (isset($_POST["chat"])) {
     foreach($tab as $key => $value){
     if($value[1]== "chat"){
             ?>    <h1>Nom :     <?=$key ?></h1><?php
@@ -29,7 +29,7 @@ if (isset($_GET["chat"])) {
         }
     }
 }
-if (isset($_GET["chien"])) {
+if (isset($_POST["chien"])) {
     foreach($tab as $key => $value){
     if($value[1]== "chien"){
             ?>    <h1>Nom :     <?= $key ?></h1><?php

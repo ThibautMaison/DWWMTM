@@ -16,4 +16,4 @@ while($estvrai){
 foreach($tableau as $valeur){
     echo $valeur . "\n";
 }
-?>
+?>bgffcg  

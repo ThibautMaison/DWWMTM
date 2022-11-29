@@ -42,6 +42,9 @@
           <a class="dropdown-item" href="ExoMoyen5bis.php">Exo5bis</a>
           <a class="dropdown-item" href="ExoMoyen6.php">Exo6</a>
           <a class="dropdown-item" href="ExoMoyen7.php">Exo7</a>
+          <a class="dropdown-item" href="ExoMoyen8.php">Exo8</a>
+          <a class="dropdown-item" href="ExoMoyen9.php">Exo9</a>
+          <a class="dropdown-item" href="ExoMoyen10.php">Exo10</a>
         </div>
       </li>
       <li class="nav-item dropdown">

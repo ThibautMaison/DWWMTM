@@ -20,8 +20,8 @@ class Personne {
         echo  $this-> nom ." " . $this-> prenom ." " . $this-> adresse ." " . $this-> ville ." " . $this-> tel ; 
     }
 }      
-$employer1 = new Personne("bonsoir","pariiiis","jesaispas","lechnord",0606060606);
-$employer2 = new Personne("AAAAA","pariiiis","jesaispas","lechnord",0606060606);
+$employer1 = new Personne("bonsoir","pariiiis","jesaispas","lechnord","0606060606");
+$employer2 = new Personne("AAAAA","pariiiis","jesaispas","lechnord","0606060606");
 $tab = [$employer1,$employer2];
 sort($tab);
 for ($i = 0; $i < count($tab); $i++) {

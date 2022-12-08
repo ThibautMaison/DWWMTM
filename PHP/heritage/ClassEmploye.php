@@ -30,7 +30,7 @@ class Employe {
         public function setsalaire($salaire){$this->salaire = $salaire;return $this;}
         public function setjob($job){$this->job = $job;return $this;}
         
-        
+         // Fonction pour presenter chaque employé sans son statue
         public function Presentation()
         {
             echo "<b>Nom: " . $this->nom . "<br/>";
@@ -40,6 +40,7 @@ class Employe {
             echo "<b>job: " . $this->job . "<br/>";
         }
 
+        // Fonction pour presenter une phrase pour chaque metier specifique
         public function PresentationJob(){
                 if($this->job == "soudeur"){
                     echo "bonsoir je suis soudeur". "<br/>";;
@@ -51,11 +52,5 @@ class Employe {
                     echo "bonsoir je suis chef maintenance". "<br/>";;
                 }echo "------------------------------------------------------------". "<br/>";
             }
-        }
-        
-
-
-$employe1 = new Employe ("jean","neymar",1850389546458,1500.56,"soudeur");
-$employe2 = new Employe ("Simon","Jeremy",179028955812,1700.47,"assistant mécanicien");
-$employe3 = new Employe ("Odile","Deray ",285097154678,1900.14,"magasinière");
+        }    
 ?>

@@ -4,23 +4,25 @@ require_once "index.php";
 
 class Cadre extends Employe {
 
-    private static $employe = [];
+    private $listemploye ;
 
-        private $statue;
+    private $statue;
 
-        public function __construct($nom,$prenom,$numSecu,$salaire,$job,$statue){
+        public function __construct($nom,$prenom,$numSecu,$salaire,$job,$statue,$listemploye){
             $this -> nom = $nom;
             $this -> prenom = $prenom;
             $this -> numSecu = $numSecu; 
             $this -> salaire = $salaire;
             $this -> job = $job;
             $this -> statue = $statue;
-            self::$employe[] = $this;
+            $this -> listemploye = $listemploye;
         }
 
-        public function getListEmploye(){return self::$statue;}
+        public function getListeEmploye(){return $this->listemploye;}
+        public function getstatue(){return $this->statue;}
 
-        public function setnom($statue){$this->statue = $statue;return $this;}
+        public function setListeEmploye($listemploye){$this->listemploye = $listemploye;return $this;}
+        public function setstatue($statue){$this->statue = $statue;return $this;}
 
         public function presentationCadre()
         {
@@ -33,9 +35,17 @@ class Cadre extends Employe {
             echo "------------------------------------------------------------". "<br/>";
         }
 
-        public function CalculSalaire(Employe $employe1){
-            $employe1->setsalaire() * 1.10 ;
+        function manage(){
+        $phrase = "Le manager manage: ";
+        foreach ($this->getListeEmploye() as $employe) {
+            $phrase = $phrase . $employe . ", ";
         }
+        return $phrase. "<br/>";
+    }
 
+        public function CalculSalaire(Employe $employe,$pourcentage){
+            $salaire1 = $employe->getsalaire() + ($employe->getsalaire() * $pourcentage). "<br/>";
+            return $salaire1;
+        }
 
 }

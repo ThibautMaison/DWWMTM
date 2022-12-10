@@ -24,8 +24,7 @@ class Cadre extends Employe {
         public function setListeEmploye($listemploye){$this->listemploye = $listemploye;return $this;}
         public function setstatue($statue){$this->statue = $statue;return $this;}
 
-        public function presentationCadre()
-        {
+        public function presentationCadre(){
             echo "<b>Nom: " . $this->nom . "<br/>";
             echo "<b>Prénom: " . $this->prenom . "<br/>";
             echo "<b>Numero de sécurité social: " . $this->numSecu . "<br/>";

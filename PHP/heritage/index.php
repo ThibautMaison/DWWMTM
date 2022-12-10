@@ -13,6 +13,7 @@ foreach ($employes as $employe) {
     echo $employe->presentation();
     echo $employe->PresentationJob();
     }
+    
 echo $cadre1->presentationCadre();
 echo $cadre1->manage();
 echo $cadre1->CalculSalaire($employe1,0.10);

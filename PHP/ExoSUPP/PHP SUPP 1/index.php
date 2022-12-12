@@ -21,7 +21,7 @@ $products = array(
 // Affichage de la liste des produits
 echo "Liste des produits disponibles :\n";
 foreach ($products as $product) {
-  echo "- " . $product->label . " (réf. " . $product->reference . ") : " . $product->price . "€\n";
+  echo "- " . $product->getlabel() . " (réf. " . $product->getreference() . ") : " . $product->getprice() . "€\n";
 }
 
 // Création de la commande

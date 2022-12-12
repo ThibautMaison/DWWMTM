@@ -1,9 +1,9 @@
 <?php
 
 class Client {
-    public $name;
-    public $firstname;
-    public $number;
+    private $name;
+    private $firstname;
+    private $number;
 
     public function __construct($name, $firstname, $number) {
        $this->name = $name;

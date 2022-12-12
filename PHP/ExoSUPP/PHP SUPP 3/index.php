@@ -12,4 +12,6 @@ echo "\n";
 $voiture1->rouler(500); // La voiture 1 roule pendant 500 km
 $voiture2->rouler(100); // La voiture 2 roule pendant 100 km
 
+echo $voiture1;
+
 ?>

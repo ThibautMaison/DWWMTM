@@ -38,7 +38,7 @@ class Rectangle{
     $carre = $this->estCarre() ? "un carré" : "pas un carré";
 
     // Afficher les informations sur le rectangle
-    echo "Longueur : " . $this->longueur . " - Largeur : " . $this->largeur . " - Périmètre : " . $this->perimetre() . " - Aire : " . $this->aire() . " - Il s'agit d' " . $carre;
+    echo " Longueur : " . $this->longueur . " - Largeur : " . $this->largeur . " - Périmètre : " . $this->perimetre() . " - Aire : " . $this->aire() . " - c'est " . $carre ;
   }
 }
 
@@ -74,7 +74,7 @@ class Triangle
     }
 
     public function afficherTriangle(){
-        return "Base : " . $this->base . " - Hauteur : " . $this->hauteur . " - Périmètre : " . $this->perimetre() . " - Aire : " . $this->aire();
+        return " Base : " . $this->base . " - Hauteur : " . $this->hauteur . " - Périmètre : " . $this->perimetre() . " - Aire : " . $this->aire();
     }
 }
 
@@ -110,7 +110,7 @@ class Cercle {
     }
   
   public function afficherCercle() {
-    echo "Diamètre : " . $this->diametre . " - Périmètre : " . $this->perimetre() . " - Aire : " . $this->aire() . " - Volume : " . $this->volume();
+    echo " Diamètre : " . $this->diametre . " - Périmètre : " . $this->perimetre() . " - Aire : " . $this->aire() . " - Volume : " . $this->volume();
   }
 }
 
@@ -146,7 +146,7 @@ class Pave extends Rectangle
   // Méthode affichant les caractéristiques du parallélépipède
   public function afficher(){
     // Afficher les informations sur le parallélépipède
-    echo "Périmètre : " . $this->perimetre() . " - Volume : " . $this->volume();
+    echo " Périmètre : " . $this->perimetre() . " - Volume : " . $this->volume();
   }
 }
 
@@ -172,7 +172,7 @@ class Pyramide extends Triangle {
 
   // Méthode pour afficher les caractéristiques de la pyramide
   public function afficher() {
-    echo "Périmètre : " . $this->perimetre() . " Volume : " . $this->volume();
+    echo " Périmètre : " . $this->perimetre() . " Volume : " . $this->volume();
   }
 }
 ?>

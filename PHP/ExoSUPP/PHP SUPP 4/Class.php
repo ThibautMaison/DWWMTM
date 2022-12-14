@@ -1,5 +1,6 @@
 <?php
-abstract class Animal {
+require "Classinterface.php";
+abstract class Animal implements Deplacer {
     protected $couleur;
     protected $nb_pattes;
   
@@ -18,18 +19,15 @@ abstract class Animal {
     public function crier() {
       // code pour faire crier l'animal
     }
-  
-    public function seDeplacer() {
-      // code pour faire se déplacer l'animal
-    }
+
   }
   
   class Lapin extends Animal {
-    private $en_vie;
+    private $En_vie;
   
-    public function __construct($couleur, $en_vie) {
-      parent::__construct($couleur, 4);
-      $this->en_vie = $en_vie;
+    public function __construct($couleur, $nb_pattes,$En_vie) {
+      parent::__construct($couleur, $nb_pattes);
+      $this->En_vie = $En_vie;
     }
 
     public function getEn_vie() {return $this->En_vie;}
@@ -37,24 +35,24 @@ abstract class Animal {
 
   
     public function seNourrir() {
-      // code pour faire se nourrir le lapin
+      return " le lapin de couleur " . $this->couleur . " se nourrit " . "\n";
     }
   
     public function crier() {
-      // code pour faire crier le lapin (différent de la méthode crier de la classe parente)
+      return " le lapin glapie de peur " . "\n";
     }
   
     public function fuir() {
-      // code pour faire fuir le lapin
+      return " Le lapin " . $this->couleur . " s'enfuie sur ses " . $this->nb_pattes . " pattes d'un seul bond ! " . "\n";
     }
   
     public function seDeplacer() {
-      // code pour faire se déplacer le lapin (différent de la méthode seDeplacer de la classe parente)
+      return 'il se deplace' . "\n";
     }
   }
 
   // Classe humain
-  abstract class Humain {
+  abstract class Humain implements Deplacer {
     // Attribut nom
     protected $nom;
     
@@ -66,12 +64,6 @@ abstract class Animal {
     public function getnom() {return $this->nom;}
     public function setnom($nom){$this->nom = $nom;}
   
-    // Méthode seDeplacer
-    public function seDeplacer() {
-      // Code pour se déplacer
-    }
-
-
   }
   
   // Classe chasseur
@@ -93,11 +85,11 @@ abstract class Animal {
   
     // Méthode chasser
     public function chasser() {
-      // Code pour chasser
+      $this->nom . " tire sur le lapin avec son ". $this->arme ." est… le rate ";
     }
   
     // Méthode seDeplacer
     public function seDeplacer() {
-      // Code pour se déplacer (peut-être différent de celui de la classe parente)
+      return $this->nom . " avance avec son " . $this->arme . "\n";
     }
   }

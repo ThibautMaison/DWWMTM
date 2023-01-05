@@ -1,0 +1,55 @@
+1.
+    1.SELECT * FROM personnage;
+    2.SELECT * FROM arme;
+    3.SELECT nom,levelMIN FROM arme;
+    4.SELECT nom,surnom,level FROM personnage;
+    5.SELECT nom as Pseudo,level as Niveau FROM personnage;
+    6.SELECT libelle as Type d'arme a feu FROM arme;
+2.
+    1.SELECT COUNT() FROM arme;
+    2.SELECT COUNT() FROM personnage;
+    3.SELECT AVG(level) FROM personnage;
+    4.SELECT SUM(baseForce),SUM(baseAgi),SUM(baseIntel) FROM classe;
+    5.SELECT MIN(levelMIN),MAX(levelMIN) FROM arme;
+    6.SELECT SUM(baseForce + baseAgi + baseIntel) FROM classe;
+3.
+    1.SELECT concat(nom, ' ' ,surnom) FROM personnage;
+    2.SELECT concat(nom, ' ' ,baseForce,' ',baseAgi,' ',baseIntel) FROM classe;
+    3.SELECT substring(nom,1,6) FROM personnage;
+    4SELECT concat(substring(nom,1,5),substring(description,1,20)) FROM classe;
+4.
+    1.SELECT * FROM arme WHERE levelMIN>4;
+    2.SELECT * FROM arme WHERE degat<25;
+    3.SELECT nom,surnom FROM personnage WHERE level=10;  
+    4.SELECT * FROM `typearme` WHERE estDistance=1; 
+5. 
+    1.	
+    2.SELECT * FROM `personnage` WHERE idPersonnage<3 AND level=10;
+    3.SELECT * FROM `arme` WHERE levelMin<4 OR levelMin>=8; 
+    4.SELECT * FROM `arme` WHERE degat>30 AND idArme<=2;
+    5.SELECT * FROM `arme` WHERE degat BETWEEN 25 AND 40 AND idArme<=2; 
+    6.SELECT * FROM `personnage` WHERE level<>8 AND level NOT BETWEEN 7 AND 6;  
+    7.SELECT COUNT(*) from personnage where level<>10; 
+    8.SELECT COUNT(*) from arme where levelMin BETWEEN 3 and 7; 
+6.
+    1.SELECT * FROM personnage where nom like 'l%'
+    2.SELECT * FROM personnage where nom like 'l%er'
+    3.SELECT * from arme where nom like '%bois%'
+    4.SELECT * FROM arme where nom LIKE 'a_b%'
+    5.SELECT * FROM arme where idArme<>6 LIMIT 6
+    6.SELECT * FROM personnage where idPersonnage IN(2,3,4,6) and level = 10; 
+    7.SELECT * FROM personnage where surnom is not null
+    8.SELECT * FROM personnage where surnom is null
+    9.SELECT * FROM personnage LIMIT 3
+    10.SELECT * FROM personnage LIMIT 2 OFFSET 3
+
+7. 
+    1.SELECT * FROM personnage personnage INNER JOIN classe ON personnage.idClasse = classe.idClasse; 
+    2.SELECT nom,levelMin,libelle,estDistance FROM arme arme INNER JOIN typearme ON arme.idTypeArme = typearme.idTypeArme; 
+8.
+    1.SELECT personnage.nom,classe.nom FROM personnage personnage INNER JOIN classe ON personnage.idClasse = classe.idClasse; 
+    2.SELECT personnage.nom AS surnom,classe.nom AS surnom FROM personnage personnage INNER JOIN classe ON personnage.idClasse = classe.idClasse; 
+    3.SELECT * FROM personnage INNER JOIN arme ON personnage.idArmeUtilise = arme.idTypeArme; 
+    4.SELECT personnage.nom, arme.nom,arme.levelMin,arme.degat,typearme.libelle,typearme.estDistance FROM personnage 
+      INNER JOIN arme ON personnage.idArmeUtilise = arme.idArme 
+      INNER JOIN typearme ON arme.idTypeArme = typearme.idTypeArme; 

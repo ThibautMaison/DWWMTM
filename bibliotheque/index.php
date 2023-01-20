@@ -1,42 +1,79 @@
-<?php
-define("URL", str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https" : "http") .
-    "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
-require_once "controllers/Livres.controller.php";
-$livreController = new LivresController;
+<?php 
+// definie la constante URL
+define("URL",str_replace("index.php","",(isset($_SERVER["HTTPS"])?"https":"http").
+"://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
 
-try {
-    if (empty($_GET['page'])) {
+// recup le fichier Boutiquecontroller
+require_once "controllers/BoutiqueController.php";
+$ComposantController=new BoutiqueController;
+
+// recup le fichier Usercontroller
+require_once "controllers/UserController.php";
+$UsersController=new UserController;
+
+try{
+    // si lutilisateur est nulle part dans url page accueil
+    if(empty($_GET["page"])){
         require "views/accueil.view.php";
-    } else {
-        $url = explode("/", filter_var($_GET['page']), FILTER_SANITIZE_URL);
-        // echo "<pre>";
-        // print_r($url);
-        // echo "</pre>";
-        switch ($url[0]) {
-            case 'accueil':
-                require "views/accueil.view.php";
-                break;
-            case "livres":
-                if (empty($url[1])) {
-                    $livreController->afficherLivres();
-                } else if ($url[1] === "l") {
-                    $livreController->afficherLivre((int)$url[2]);
-                } else if ($url[1] === "a") {
-                    $livreController->ajoutLivre();
-                } else if ($url[1] === "m") {
-                    echo "modification d'un livre";
-                } else if ($url[1] === "s") {
-                    $livreController->suppressionLivre($url[1]);
-                } else if ($url[1] === "av") {
-                    $livreController->ajoutLivreValidation();
-                } else {
+    }
+    // permet de gerer le chgment de page quand utilisateur est deja dans une autre page
+    else{
+        $url=explode("/",filter_var($_GET["page"],FILTER_SANITIZE_URL));
+
+        // on test premier element de url
+        switch($url[0]){
+            case"accueil" : require "views/accueil.view.php";
+            break;
+            case"Forum" : require "views/Forum.view.php";
+            break;
+            case"Optimisation" : require "views/Optimisation.view.php";
+            break;
+            case"Contact" : require "views/Contact.view.php";
+            break;
+            case"logout" : require "views/logout.php";
+            break;
+            case"inscription" :
+                if(empty($url[1])){
+                    $UsersController->inscription();
+                }else if($url[1]==="9"){
+                    // afficher le Users concerner
+                    $UsersController->ajoutUsersValidation();
+                };
+            break;
+            case"connexion" :                
+                if(empty($url[1])){
+                $UsersController->connexion();
+            }else if($url[1]==="3"){
+                // afficher le Users concerner
+                $UsersController->UsersValidation();
+            };
+            break;
+            case"Boutique" :
+            // si on a rien en tant que 2ème élément dans mon URL
+                if(empty($url[1])){
+                    $ComposantController->afficherBoutique();
+                }else if($url[1]==="l"){
+                    // afficher le Composant concerner
+                    $ComposantController->afficherComposant((int)$url[2]);
+                }else if($url[1]==="a"){
+                    $ComposantController->ajoutComposant();
+                }else if($url[1]==="m"){
+                    $ComposantController->modificationComposant((int)$url[2]);
+                }else if($url[1]==="s"){
+                    $ComposantController->suppressionComposant((int)$url[2]);
+                }else if($url[1]==="av"){
+                    $ComposantController->ajoutComposantValidation();
+                }else if($url[1]==="mv"){
+                    $ComposantController->modificationComposantValidation();
+                }else{
+                    // lever l'erreur si page nexiste pas
                     throw new Exception("La page n'existe pas");
                 }
-                break;
-            default:
-                throw new Exception("La page n'existe pas");
+            break;
+            // c'est une sorte de else ! De plus on lève lerreur
+            default : throw new Exception("La page n'existe pas");
         }
     }
-} catch (Exception $e) {
+}catch(Exception $e){   //permet dafficher le message
     echo $e->getMessage();
 }

@@ -37,7 +37,7 @@ class ComposantManager extends Model{
 
         foreach($mesBoutique as $Composant){
             // genere Composant de la classe Composant
-            $l=new Composant($Composant["id"],$Composant["Name"],$Composant["Description"],$Composant["image"]);
+            $l=new Composant($Composant["id"],$Composant["Name"],$Composant["Categorie"],$Composant["Lien"],$Composant["image"]);
             $this->ajoutBoutique($l);
         }
 
@@ -50,15 +50,16 @@ class ComposantManager extends Model{
         }
     }
 
-    public function ajoutComposantBd($Name,$Description,$image){
+    public function ajoutComposantBd($Name,$Categorie,$Lien,$image){
         $req="
-        INSERT INTO Boutique (Name,Description,image)
-        value (:Name,:Description,:image)";
+        INSERT INTO Boutique (Name,Categorie,Lien,image)
+        value (:Name,:Categorie,:Lien,:image)";
         // connexion à bd
         $stmt=$this->getBdd()->prepare($req);
         // on met en lien la req avec ce qu'il y a dans la bd
         $stmt->bindValue(":Name",$Name,PDO::PARAM_STR); //PDO::PARAM_STR sert à securiser le type de données
-        $stmt->bindValue(":Description",$Description,PDO::PARAM_STR);
+        $stmt->bindValue(":Categorie",$Categorie,PDO::PARAM_STR);
+        $stmt->bindValue(":Lien",$Lien,PDO::PARAM_STR);
         $stmt->bindValue(":image",$image,PDO::PARAM_STR);
         // sert à executer requete et a ajouter données à la bdd
         $resultat=$stmt->execute();
@@ -68,7 +69,7 @@ class ComposantManager extends Model{
         // si requete fonctionne 
         if($resultat>0){
             // on ajoute le Composant a la classe Composant
-            $Composant=new Composant($this->getBdd()->lastInsertId(),$Name,$Description,$image);
+            $Composant=new Composant($this->getBdd()->lastInsertId(),$Name,$Categorie,$Lien,$image);
             // ajoute Composant au tableau de Composant
             $this->ajoutBoutique($Composant);
         }
@@ -94,17 +95,18 @@ class ComposantManager extends Model{
         }
     }
 
-    public function modificationComposantBd($id,$Name,$Description,$image){
+    public function modificationComposantBd($id,$Name,$Categorie,$Lien,$image){
         $req = "
         UPDATE Boutique
-        SET Name= :Name,Description= :Description,image= :image
+        SET Name= :Name,Categorie= :Categorie,Lien= :Lien,image= :image
         WHERE id= :id";
 
         // connexion à bd
         $stmt = $this->getBdd()->prepare($req);
         $stmt->bindValue(":id", $id, PDO::PARAM_INT);
         $stmt->bindValue(":Name", $Name, PDO::PARAM_STR);
-        $stmt->bindValue(":Description", $Description, PDO::PARAM_STR);
+        $stmt->bindValue(":Categorie", $Categorie, PDO::PARAM_STR);
+        $stmt->bindValue(":Lien",$Lien,PDO::PARAM_STR);
         $stmt->bindValue(":image", $image, PDO::PARAM_STR);
         // sert à executer requete et a ajouter données à la bdd
         $resultat=$stmt->execute();
@@ -115,30 +117,9 @@ class ComposantManager extends Model{
         if($resultat>0){
             // mettre a jour le tableau des Boutique
             $this->getComposantById($id)->setName($Name);
-            $this->getComposantById($id)->setDescription($Description);
+            $this->getComposantById($id)->setCategorie($Categorie);
+            $this->getComposantById($id)->setLien($Lien);
             $this->getComposantById($id)->setImage($image);
-        }
-    }
-    public function ajoutUserBd($Pseudo,$Password){
-    $req="
-    INSERT INTO Users (Pseudo,Password)
-    value (:Pseudo,:Password)";
-    // connexion à bd
-    $stmt=$this->getBdd()->prepare($req);
-        // on met en lien la req avec ce qu'il y a dans la bd
-    $stmt->bindValue(":Pseudo",$Pseudo,PDO::PARAM_STR); //PDO::PARAM_STR sert à securiser le type de données
-    $stmt->bindValue(":Password",$Password,PDO::PARAM_STR);
-    // sert à executer requete et a ajouter données à la bdd
-    $resultat=$stmt->execute();
-    // ferme connexion abdd
-    $stmt->closeCursor();
-
-    // si requete fonctionne 
-    if($resultat>0){
-    // on ajoute le Users a la classe Users
-    $Users=new Users($this->getBdd()->lastInsertId(),$Name,$Password,);
-        // ajoute Users au tableau de Users
-        $this->ajoutUsers($Users);
         }
     }
 }

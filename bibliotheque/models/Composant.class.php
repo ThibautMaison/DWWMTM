@@ -2,14 +2,16 @@
 class Composant{
     private $id;
     private $Name;
-    private $Description;
+    private $Categorie;
+    private $Lien;
     private $image;
 
-    public function __construct($id,$Name,$Description,$image)
+    public function __construct($id,$Name,$Categorie,$Lien,$image)
     {
         $this->id=$id;
         $this->Name=$Name;
-        $this->Description=$Description;
+        $this->Categorie=$Categorie;
+        $this->Lien=$Lien;
         $this->image=$image;
     }
 
@@ -19,8 +21,11 @@ class Composant{
     public function getName(){return $this->Name;}
     public function setName($Name){$this->Name=$Name;}
 
-    public function getDescription(){return $this->Description;}
-    public function setDescription($Description){$this->Description=$Description;}
+    public function getCategorie(){return $this->Categorie;}
+    public function setCategorie($Categorie){$this->Categorie=$Categorie;}
+
+    public function getLien(){return $this->Lien;}
+    public function setLien($Lien){$this->Lien=$Lien;}
 
     public function getImage(){return $this->image;}
     public function setImage($image){$this->image=$image;}

@@ -1,5 +1,4 @@
 <?php 
-session_start();
 ob_start()
 ?>
 
@@ -11,8 +10,12 @@ ob_start()
         <!-- id sert pour js et css -->
     </div>
     <div class="form-group" style="margin-bottom: 50px;margin-top: 50px;">
-        <label class="text-white" for="Description">Description :</label>
-        <input type="text" class="form-control" id="Description" name="Description">
+        <label class="text-white" for="Categorie">Categorie :</label>
+        <input type="text" class="form-control" id="Categorie" name="Categorie">
+    </div>
+    <div class="form-group" style="margin-bottom: 50px;margin-top: 50px;">
+        <label class="text-white" for="Lien">Lien :</label>
+        <input type="text" class="form-control" id="Lien" name="Lien">
     </div>
     <div class="form-group" style="margin-bottom: 50px;margin-top: 50px;">
         <label class="text-white" for="image" class="form-label">Image :</label>
@@ -23,6 +26,6 @@ ob_start()
 
 <?php
 $content = ob_get_clean();
-$Name = "Ajout d'un livre";
+$Name = "Ajout d'un produit";
 require "template.php";
 ?>

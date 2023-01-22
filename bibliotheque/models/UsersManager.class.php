@@ -21,12 +21,6 @@ class UsersManager extends Model{
         // permet deviter des doublons
         
         $mesUser=$req->fetchAll(PDO::FETCH_ASSOC);
-
-        // // Pour verifier
-        // echo "<pre>";
-        // print_r($User);
-        // echo "</pre>";
-        // ferme requete
         $req->closeCursor();
 
 
@@ -46,22 +40,6 @@ class UsersManager extends Model{
     }
 
     public function ajoutUsersBd($Pseudo,$Email,$Password){
-        // // Requête SQL pour vérifier si le nom d'utilisateur existe déjà
-        //     $req = "SELECT * FROM Users WHERE Pseudo='$Pseudo'";
-        //         // Préparation de la requête à être exécutée
-        //         $stmt=$this->getBdd()->prepare($req);
-        //         // liaison des valeurs pour les paramètres de la requête
-        //         $stmt->bindValue(':Pseudo', $Pseudo);
-        //         // Exécution de la requête
-        //         $stmt->execute();
-        //         //fermeture de la requête
-        //         $stmt->closeCursor();
-        //         // Vérification du résultat de la requête               
-        //         if ($stmt > 0) {
-        //         // Le nom d'utilisateur existe déjà
-
-        //         echo "Le nom d'utilisateur existe déjà. Veuillez en choisir un autre.";
-        // } else {
         // // Insérez le code pour l'inscription de l'utilisateur ici
         $req=("INSERT INTO Users SET Pseudo = :Pseudo,Email = :Email, Password = :Password ");
 
@@ -78,8 +56,6 @@ class UsersManager extends Model{
         // ferme connexion abdd
         $stmt->closeCursor();
 
-
-
         // si requete fonctionne 
         if($resultat>0){
             // on ajoute le Users a la classe Users
@@ -88,31 +64,28 @@ class UsersManager extends Model{
             $this->ajoutUser($Users);
         }
     }
-
     public function ConnexionUser($Pseudo, $Password) {
         // Préparation de la requête pour récupérer l'utilisateur avec les informations de connexion
-        $req=("SELECT * FROM Users WHERE Pseudo = :Pseudo AND Password = :Password");
+        $req=("select * from Users where Pseudo = :Pseudo");
         // Préparation de la requête à être exécutée
         $stmt=$this->getBdd()->prepare($req);
         // liaison des valeurs pour les paramètres de la requête
-        $stmt->bindValue(':Pseudo', $Pseudo);
-        $stmt->bindValue(':Password', password_verify($Password));
+        $stmt->bindValue(":Pseudo",$Pseudo,PDO::PARAM_STR);
         // Exécution de la requête
         $stmt->execute();
-        //fermeture de la requête
-        $stmt->closeCursor();
 
-        // vérification si on a trouvé un utilisateur avec les informations de connexion 
-        if ($stmt->rowCount() == 1) {
-            // démarrage de session 
-            session_start();
-            // Stocker le pseudo de l'utilisateur connecté dans une variable de session
-            $_SESSION['Pseudo'] = $Pseudo;
-            return true;
-        } else {
-            // retourne faux si aucun utilisateur trouvé
-            return false;
-        }
+        if($stmt->rowCount() > 0){
+            $data = $stmt->fetchAll();
+            var_dump($data);
+            if(password_verify($Password, $data[0]['Password'])){
+
+                $_SESSION['Pseudo'] = $Pseudo;
+            }else{
+                echo"reessaye";
+            }
+
+        } 
+    $stmt->closeCursor();
     }
 }
 ?>

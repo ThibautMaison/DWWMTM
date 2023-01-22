@@ -16,6 +16,12 @@ class BoutiqueController {
         require "views/Boutique.view.php";
         // qd on require, tous ce qui est declarer ds fonction et va dans require
     }
+    public function afficherOrdinateur(){
+        // $Boutique recup le tableau des Boutique
+        $Boutique=$this->ComposantManager->getBoutique();
+        require "views/Ordinateur.view.php";
+        // qd on require, tous ce qui est declarer ds fonction et va dans require
+    }
 
     public function afficherComposant($id){
         $Composant=$this->ComposantManager->getComposantById($id);
@@ -33,7 +39,7 @@ class BoutiqueController {
         $repertoire="public/images/";
         $nomImageAjoute= $this->ajoutImage($file,$repertoire);
         // ajouter le Composant en bdd
-        $this->ComposantManager->ajoutComposantBd($_POST["Name"],$_POST["Description"],$nomImageAjoute);
+        $this->ComposantManager->ajoutComposantBd($_POST["Name"],$_POST["Categorie"],$_POST["Lien"],$nomImageAjoute);
         // redirige lutilisateur vers la pages des Boutique
         header("Location: ".URL."Boutique");
     }
@@ -102,7 +108,7 @@ class BoutiqueController {
         }else{
             $nomImageToAdd = $imageActuel;
         }
-        $this->ComposantManager->modificationComposantBd((int)$_POST["identifiant"], $_POST["Name"], $_POST["Description"],$nomImageToAdd);
+        $this->ComposantManager->modificationComposantBd((int)$_POST["identifiant"], $_POST["Name"], $_POST["Categorie"],$_POST["Lien"],$nomImageToAdd);
         header("Location: ".URL."Boutique");
     }
 }

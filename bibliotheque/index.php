@@ -26,7 +26,7 @@ try{
             break;
             case"Forum" : require "views/Forum.view.php";
             break;
-            case"Optimisation" : require "views/Optimisation.view.php";
+            case"Bou" : require "views/Bou.view.php";
             break;
             case"Contact" : require "views/Contact.view.php";
             break;
@@ -55,6 +55,8 @@ try{
                 }else if($url[1]==="l"){
                     // afficher le Composant concerner
                     $ComposantController->afficherComposant((int)$url[2]);
+                }else if($url[1]==="ordinateur"){
+                    $ComposantController->afficherOrdinateur();
                 }else if($url[1]==="a"){
                     $ComposantController->ajoutComposant();
                 }else if($url[1]==="m"){

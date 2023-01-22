@@ -1,32 +1,37 @@
 <?php
-session_start();
 ob_start();
-$Name="CONTACT";
-require "Titre.view.php"?>
+?>
 
-<form method="POST" style="margin-bottom: 200px;margin-top: 100px;">
+<form method="POST" class="d-grid gap-2 col-6 mx-auto"  style="margin-bottom: 400px;margin-top: 100px;">
 <!-- enctype="multipart/form-data" obliger de le mettre quand on charge un fichier -->
-    <div class="form-group" style="margin-bottom: 50px;margin-top: 50px;" >
-        <label class="text-white">Nom :</label>
-        <input type="text" class="form-control"name="Nom" requied>
+    <div class="form-group mb-2" style="margin-top: 50px;" >
+        <label class="text-white"></label>
+        <input type="text" class="form-control"name="Nom"  placeholder="Pseudo :">
         <!-- id sert pour js et css -->
     </div>
-    <div class="form-group" style="margin-bottom: 50px;margin-top: 50px;" >
-        <label class="text-white">Email :</label>
-        <input type="text" class="form-control"name="Email" requied>
+    <div class="form-group mb-2" >
+        <label class="text-white"></label>
+        <input type="text" class="form-control"name="Email"  placeholder="Email :">
         <!-- id sert pour js et css -->
     </div>
-    <div class="form-group" style="margin-bottom: 50px;margin-top: 50px;" >
-        <label class="text-white">Sujet :</label>
-        <input type="text" class="form-control"name="Sujet" requied>
+    <div class="form-group mb-2" >
+        <label class="text-white"></label>
+        <input type="text" class="form-control"name="Sujet"  placeholder="Sujet :">
         <!-- id sert pour js et css -->
     </div>
-    <div class="form-group" style="margin-bottom: 50px;margin-top: 50px;" >
-        <label class="text-white">Message :</label>
-        <input type="text" class="form-control"name="Message" requied>
-        <!-- id sert pour js et css -->
-    </div>
-    <button type="submit" name="Envoyer" class="btn btn-primary">Envoyer</button>
+    <div class="form-outline mb-2">
+    <label class="form-label text-white" for="form4Example3"></label>
+    <textarea class="form-control"name="Message" placeholder="Message :" rows="4"></textarea>
+
+  </div>
+  <div class="form-check d-flex justify-content-center mb-4" >
+    <input class="form-check-input me-2 " type="checkbox" value="" id="form4Example4" checked />
+    <label class="form-check-label text-white" for="form4Example4">
+      Send me a copy of this message
+    </label>
+  </div>
+  
+    <button type="submit" name="Envoyer" class="btn btn-outline-light rounded-pill mb-5 d-grid gap-2 col-6 mx-auto">Envoyer</button>
 </form>
 
 <?php

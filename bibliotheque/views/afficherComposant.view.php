@@ -1,5 +1,4 @@
 <?php 
-session_start();
 ob_start()?>
 
 <div class="row">
@@ -8,7 +7,7 @@ ob_start()?>
     </div>
     <div class="col-6 ">
         <p>Name : <?= $Composant->getName() ?></p>
-        <p>Description : <?= $Composant->getDescription() ?></p>
+        <p>Categorie : <?= $Composant->getCategorie() ?></p>
     </div>
 </div>
 

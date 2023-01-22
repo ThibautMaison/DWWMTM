@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "models/UsersManager.class.php";
 
 class UserController {
@@ -27,38 +28,35 @@ class UserController {
         }
     public function UsersValidation(){
         $this->UsersManager->ConnexionUser($_POST["Pseudo"],$_POST["Password"]);
-        $_SESSION['alert']= [ 
-        "type"=> "success",        
-    ];
         header("Location: ".URL."accueil"); 
     }
 
 
-    public function suppressionUsers($id){
-        $nomImage= $this->UsersManager->getUsersById($id)->getImage();
-        unlink("public/images/".$nomImage);
-        $this->UsersManager->suppressionUsersBd($id);
-        header("Location: ".URL."inscription");
-    }
+    // public function suppressionUsers($id){
+    //     $nomImage= $this->UsersManager->getUsersById($id)->getImage();
+    //     unlink("public/images/".$nomImage);
+    //     $this->UsersManager->suppressionUsersBd($id);
+    //     header("Location: ".URL."inscription");
+    // }
 
-    public function modificationUsers($id){
-        $Users = $this->UsersManager->getUsersById($id);
-        require "views/modifierUsers.view.php";
-    }
+    // public function modificationUsers($id){
+    //     $Users = $this->UsersManager->getUsersById($id);
+    //     require "views/modifierUsers.view.php";
+    // }
 
-    public function modificationUsersValidation(){
-        $imageActuel = $this->UsersManager->getUsersById((int)$_POST["identifiant"])->getImage();
-        $file = $_FILES['image'];
+    // public function modificationUsersValidation(){
+    //     $imageActuel = $this->UsersManager->getUsersById((int)$_POST["identifiant"])->getImage();
+    //     $file = $_FILES['image'];
 
-        if($file["size"]>0){
-            unlink("public/images/" . $imageActuel);
-            $repertoire="public/images/";
-            $nomImageToAdd =$this->ajoutImage($file,$repertoire);
-        }else{
-            $nomImageToAdd = $imageActuel;
-        }
-        $this->UsersManager->modificationUsersBd((int)$_POST["identifiant"], $_POST["Pseudo"], $_POST["Email"],$nomImageToAdd);
-        header("Location: ".URL."inscription");
-    }
+    //     if($file["size"]>0){
+    //         unlink("public/images/" . $imageActuel);
+    //         $repertoire="public/images/";
+    //         $nomImageToAdd =$this->ajoutImage($file,$repertoire);
+    //     }else{
+    //         $nomImageToAdd = $imageActuel;
+    //     }
+    //     $this->UsersManager->modificationUsersBd((int)$_POST["identifiant"], $_POST["Pseudo"], $_POST["Email"],$nomImageToAdd);
+    //     header("Location: ".URL."inscription");
+    // }
 }
 ?>

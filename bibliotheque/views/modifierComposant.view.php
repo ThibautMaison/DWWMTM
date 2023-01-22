@@ -7,8 +7,8 @@ ob_start()
         <input type="text" class="form-control" id="Name" name="Name" value="<?= $Composant->getName() ?>">
     </div>
     <div class="form-group mb-2" style="margin-bottom: 50px;margin-top: 50px;">
-        <label class="text-white" for="Categorie">Categorie :</label>
-        <input type="text" class="form-control" id="Categorie" name="Categorie" value="<?= $Composant->getCategorie() ?>">
+        <label class="text-white" for="Description">Description :</label>
+        <input type="text" class="form-control" id="Description" name="Description" value="<?= $Composant->getDescription() ?>">
     </div>
     <div class="form-group mb-4" style="margin-bottom: 50px;margin-top: 50px;">
         <label class="text-white" for="Lien">Lien :</label>

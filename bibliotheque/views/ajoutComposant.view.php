@@ -10,8 +10,8 @@ ob_start()
         <!-- id sert pour js et css -->
     </div>
     <div class="form-group" style="margin-bottom: 50px;margin-top: 50px;">
-        <label class="text-white" for="Categorie">Categorie :</label>
-        <input type="text" class="form-control" id="Categorie" name="Categorie">
+        <label class="text-white" for="Description">Description :</label>
+        <input type="text" class="form-control" id="Description" name="Description">
     </div>
     <div class="form-group" style="margin-bottom: 50px;margin-top: 50px;">
         <label class="text-white" for="Lien">Lien :</label>

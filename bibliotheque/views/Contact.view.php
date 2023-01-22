@@ -2,7 +2,7 @@
 ob_start();
 ?>
 
-<form method="POST" class="d-grid gap-2 col-6 mx-auto"  style="margin-bottom: 400px;margin-top: 100px;">
+<form method="POST" class="d-grid gap-2 col-6 mx-auto mt-5" >
 <!-- enctype="multipart/form-data" obliger de le mettre quand on charge un fichier -->
     <div class="form-group mb-2" style="margin-top: 50px;" >
         <label class="text-white"></label>
@@ -21,12 +21,12 @@ ob_start();
     </div>
     <div class="form-outline mb-2">
     <label class="form-label text-white" for="form4Example3"></label>
-    <textarea class="form-control"name="Message" placeholder="Message :" rows="4"></textarea>
+    <textarea class="form-control"name="Message" placeholder="Message :" rows="6"></textarea>
 
   </div>
-  <div class="form-check d-flex justify-content-center mb-4" >
-    <input class="form-check-input me-2 " type="checkbox" value="" id="form4Example4" checked />
-    <label class="form-check-label text-white" for="form4Example4">
+  <div class="form-check d-flex justify-content-center m-4" >
+    <input class="form-check-input me-2 mt-3" type="checkbox" value="" checked />
+    <label class="form-check-label text-white mt-3" for="form4Example4">
       Send me a copy of this message
     </label>
   </div>

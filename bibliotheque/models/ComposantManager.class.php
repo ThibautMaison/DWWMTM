@@ -37,7 +37,7 @@ class ComposantManager extends Model{
 
         foreach($mesBoutique as $Composant){
             // genere Composant de la classe Composant
-            $l=new Composant($Composant["id"],$Composant["Name"],$Composant["Categorie"],$Composant["Lien"],$Composant["image"]);
+            $l=new Composant($Composant["id"],$Composant["Name"],$Composant["Description"],$Composant["Lien"],$Composant["image"]);
             $this->ajoutBoutique($l);
         }
 
@@ -50,15 +50,15 @@ class ComposantManager extends Model{
         }
     }
 
-    public function ajoutComposantBd($Name,$Categorie,$Lien,$image){
+    public function ajoutComposantBd($Name,$Description,$Lien,$image){
         $req="
-        INSERT INTO Boutique (Name,Categorie,Lien,image)
-        value (:Name,:Categorie,:Lien,:image)";
+        INSERT INTO Boutique (Name,Description,Lien,image)
+        value (:Name,:Description,:Lien,:image)";
         // connexion à bd
         $stmt=$this->getBdd()->prepare($req);
         // on met en lien la req avec ce qu'il y a dans la bd
         $stmt->bindValue(":Name",$Name,PDO::PARAM_STR); //PDO::PARAM_STR sert à securiser le type de données
-        $stmt->bindValue(":Categorie",$Categorie,PDO::PARAM_STR);
+        $stmt->bindValue(":Description",$Description,PDO::PARAM_STR);
         $stmt->bindValue(":Lien",$Lien,PDO::PARAM_STR);
         $stmt->bindValue(":image",$image,PDO::PARAM_STR);
         // sert à executer requete et a ajouter données à la bdd
@@ -69,7 +69,7 @@ class ComposantManager extends Model{
         // si requete fonctionne 
         if($resultat>0){
             // on ajoute le Composant a la classe Composant
-            $Composant=new Composant($this->getBdd()->lastInsertId(),$Name,$Categorie,$Lien,$image);
+            $Composant=new Composant($this->getBdd()->lastInsertId(),$Name,$Description,$Lien,$image);
             // ajoute Composant au tableau de Composant
             $this->ajoutBoutique($Composant);
         }
@@ -78,7 +78,7 @@ class ComposantManager extends Model{
     public function suppressionComposantBd($id){
         //  il est interdit de faire une concatenation avec $id, pour la securité
         $req="
-        DELETE from Boutique where id= :idComposant";
+        DELETE from boutique where id= :idComposant";
         // connexion à bd
         $stmt=$this->getBdd()->prepare($req);
         $stmt->bindValue(":idComposant",$id,PDO::PARAM_INT);
@@ -95,17 +95,17 @@ class ComposantManager extends Model{
         }
     }
 
-    public function modificationComposantBd($id,$Name,$Categorie,$Lien,$image){
+    public function modificationComposantBd($id,$Name,$Description,$Lien,$image){
         $req = "
-        UPDATE Boutique
-        SET Name= :Name,Categorie= :Categorie,Lien= :Lien,image= :image
+        UPDATE boutique
+        SET Name= :Name,Description= :Description,Lien= :Lien,image= :image
         WHERE id= :id";
 
         // connexion à bd
         $stmt = $this->getBdd()->prepare($req);
         $stmt->bindValue(":id", $id, PDO::PARAM_INT);
         $stmt->bindValue(":Name", $Name, PDO::PARAM_STR);
-        $stmt->bindValue(":Categorie", $Categorie, PDO::PARAM_STR);
+        $stmt->bindValue(":Description", $Description, PDO::PARAM_STR);
         $stmt->bindValue(":Lien",$Lien,PDO::PARAM_STR);
         $stmt->bindValue(":image", $image, PDO::PARAM_STR);
         // sert à executer requete et a ajouter données à la bdd
@@ -117,7 +117,7 @@ class ComposantManager extends Model{
         if($resultat>0){
             // mettre a jour le tableau des Boutique
             $this->getComposantById($id)->setName($Name);
-            $this->getComposantById($id)->setCategorie($Categorie);
+            $this->getComposantById($id)->setDescription($Description);
             $this->getComposantById($id)->setLien($Lien);
             $this->getComposantById($id)->setImage($image);
         }

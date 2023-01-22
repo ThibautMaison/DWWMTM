@@ -7,7 +7,7 @@ ob_start()?>
     </div>
     <div class="col-6 ">
         <p>Name : <?= $Composant->getName() ?></p>
-        <p>Categorie : <?= $Composant->getCategorie() ?></p>
+        <p>Description : <?= $Composant->getDescription() ?></p>
     </div>
 </div>
 

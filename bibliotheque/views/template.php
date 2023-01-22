@@ -10,11 +10,11 @@
   <link rel="stylesheet" href="style.c">
 </head>
 
-<body style="background-image: url(/public/Accueil/375782.jpg);  background-repeat: no-repeat;background-size: cover;background-position: center center;">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3 rounded " style="background-image: url(/public/Accueil/375782.jpg);  background-repeat: no-repeat;background-size: cover;background-position: center center;">>
-    <div class="container-fluid m-0" style="margin-bottom: 30px; margin-top: 30px;">
-      <div class="navbar-collapse ">
-        <ul class="navbar-nav me-auto">
+<body style="background-color: #0C0C0C;">
+  <nav class="navbar navbar-expand-lg navbar-dark p-3 rounded mb-5">
+    <div class="container-fluid " style="margin-bottom: 30px; margin-top: 30px;">
+      <div class="navbar-collapse mx-5">
+        <ul class="navbar-nav me-auto ms-5">
           <li class="nav-item">
             <a class="nav-link text-white" href="<?= URL ?>accueil">Accueil</a>
           </li>
@@ -33,30 +33,39 @@
         </ul>
         <?php
         if (isset($_SESSION['Pseudo'])) { ?>
-          <a class="btn btn-outline-light rounded-pill me-4 text-white border-white" href="<?= URL ?>logout">Deconnexion</a>
+          <div class="btn-group dropdown-end mx-5">
+            <a type="button" class="btn btndark d-flex align-items-center" data-bs-toggle="dropdown" aria-expanded="false">
+              COMPTE             
+              <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle ms-2" height="22"
+              alt="" loading="lazy" />
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start bg-dark">
+              <li><a class="btn btn-dark text-white d-flex justify-content-center" href="">Parametre</a></li>
+              <li><a class="btn btn-dark text-white d-flex justify-content-center" href="<?= URL ?>logout">Deconnexion</a></li>
+            </ul>
+          </div>
         <?php
-        } elseif (isset($_SESSION['Pseudo']) == NULL) { ?>
-          <a class="btn btn-outline-light rounded-pill me-4 " href="<?= URL ?>connexion">Connexion</a>
-          <a class="btn btn-outline-light rounded-pill me-4 " href="<?= URL ?>inscription">Inscription</a>
+        } else { ?>
+          <a class="btn btn-dark text-white d-flex justify-content-center me-4" href="<?= URL ?>connexion">CONNEXION</a>
+          <a class="btn btn-dark text-white d-flex justify-content-center me-5" href="<?= URL ?>inscription">INSCRIPTION</a>
         <?php }
         ?>
       </div>
     </div>
   </nav>
 
-
-  <div class="container-fluide">
+  <div class="container-fluide" style="background: linear-gradient(#0C0C0C, #161616)">
     <?= $content ?>
   </div>
 
 
 
 
-  <footer class="text-center text-lg-start text-white" style="margin-top: 350px;">
-    <div class="container p-4 pb-0">
+  <footer class="text-center text-lg-start text-white" style="background-color: #161616;">
+    <div class="container p-4 pb-0 ">
       <section class="">
-        <div class="row">
-          <div class="col-md-2 mb-4col-lg-2 col-xl-2 mx-auto mt-3 services-list text-center">
+        <div class="row mt-5">
+          <div class="col-md-2 mb-4col-lg-2 col-xl-2 mx-auto mt-5 services-list text-center">
             <img class="mb-4" style="width: 100px;height: 60px;" src="/public/Accueil/transparent-screen-icon-ventures-icon-pc-tower-and-monitor-ico-609030c4286439.4452916816200624041655.png" alt="logo">
             <P>Bienvenue sur Shop.TAIIZERR.fr !
               Retrouvez mes conseils pour le meilleur matériel et le forum pour vous aider et échanger librement.</P>
@@ -64,7 +73,7 @@
 
           <hr class="w-100 clearfix d-md-none" />
 
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto services-list mt-3 text-center">
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto services-list mt-5 text-center">
             <h6 class="text-uppercase mb-4 font-weight-bold display-6">MENU</h6>
             <p>
               <a href="<?= URL ?>accueil" class="text-white">Accueil</a>
@@ -87,7 +96,7 @@
 
           <hr class="w-100 clearfix d-md-none" />
 
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 text-center">
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-5 text-center">
             <h6 class="text-uppercase mb-4 font-weight-bold display-6">Contact</h6>
             <p><i class="fas fa-home mr-3"></i> Dunkerque, France</p>
             <p><i class="fas fa-envelope mr-3"></i> thibautmaison59@gmail.com</p>

@@ -6,7 +6,7 @@ ob_start();
         <tr class="table-dark">
             <th>Image</th>
             <th>Name</th>
-            <th>Categorie</th>
+            <th>Description</th>
             <!-- Permet d'avoir 2 colonnes en une -->
             <th colspan="2">Actions</th>
         </tr>
@@ -16,7 +16,7 @@ ob_start();
             <tr>
                 <td class="align-middle text-white"><img src="public/images/<?= $Boutique[$i]->getImage() ?>" class="w-25 d-grid gap-2 mx-auto d-flex justify-content-center mt-4 hover-shadow "></td>
                 <td class="align-middle"><a class="mt-4 d-grid gap-2 mx-auto d-flex justify-content-center" href="<?= URL ?>TestCRUD/l/<?= $Boutique[$i]->getId() ?>"><?= $Boutique[$i]->getName() ?></td>
-                <td class="align-middle text-white"><?= $Boutique[$i]->getCategorie() ?></td>
+                <td class="align-middle text-white"><?= $Boutique[$i]->getDescription() ?></td>
                 <td class="align-middle text-white"><a href="<?= URL ?>TestCRUD/m/<?= $Boutique[$i]->getId() ?>" class="btn btn-warning">Modifier</a></td>
                 <td class="align-middle text-white">
                     <!-- onSubmit pour confirmer la suprresion -->

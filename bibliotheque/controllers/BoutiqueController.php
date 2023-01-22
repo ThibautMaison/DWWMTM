@@ -39,7 +39,7 @@ class BoutiqueController {
         $repertoire="public/images/";
         $nomImageAjoute= $this->ajoutImage($file,$repertoire);
         // ajouter le Composant en bdd
-        $this->ComposantManager->ajoutComposantBd($_POST["Name"],$_POST["Categorie"],$_POST["Lien"],$nomImageAjoute);
+        $this->ComposantManager->ajoutComposantBd($_POST["Name"],$_POST["Description"],$_POST["Lien"],$nomImageAjoute);
         // redirige lutilisateur vers la pages des Boutique
         header("Location: ".URL."Boutique");
     }
@@ -108,7 +108,7 @@ class BoutiqueController {
         }else{
             $nomImageToAdd = $imageActuel;
         }
-        $this->ComposantManager->modificationComposantBd((int)$_POST["identifiant"], $_POST["Name"], $_POST["Categorie"],$_POST["Lien"],$nomImageToAdd);
+        $this->ComposantManager->modificationComposantBd((int)$_POST["identifiant"], $_POST["Name"], $_POST["Description"],$_POST["Lien"],$nomImageToAdd);
         header("Location: ".URL."Boutique");
     }
 }

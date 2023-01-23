@@ -17,6 +17,10 @@ ob_start()
         <label class="text-white" for="Lien">Lien :</label>
         <input type="text" class="form-control" id="Lien" name="Lien">
     </div>
+    <div class="form-group mb-4" style="margin-bottom: 50px;margin-top: 50px;">
+        <label class="text-white" for="idCategorie">idCategorie :</label>
+        <input type="text" class="form-control" id="idCategorie" name="idCategorie">
+    </div>
     <div class="form-group" style="margin-bottom: 50px;margin-top: 50px;">
         <label class="text-white" for="image" class="form-label">Image :</label>
         <input class="form-control-file text-white" type="file" id="image" name="image">

@@ -14,6 +14,10 @@ ob_start()
         <label class="text-white" for="Lien">Lien :</label>
         <input type="text" class="form-control" id="Lien" name="Lien" value="<?= $Composant->getLien() ?>">
     </div>
+    <div class="form-group mb-4" style="margin-bottom: 50px;margin-top: 50px;">
+        <label class="text-white" for="idCategorie">idCategorie :</label>
+        <input type="text" class="form-control" id="idCategorie" name="idCategorie" value="<?= $Composant->getidCategorie() ?>">
+    </div>
     <h3 class="text-white">Images : </h3>
     <img style="width: 300px" src="<?= URL ?>public/images/<?= $Composant->getImage()?>" alt="">
     <div class="form-group mb-2" style="margin-bottom: 50px;margin-top: 50px;">

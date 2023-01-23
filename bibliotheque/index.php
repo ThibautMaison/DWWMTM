@@ -63,6 +63,16 @@ try{
                     $ComposantController->afficherBoutiqueClavier();
                 }else if($url[1]==="souris"){
                     $ComposantController->afficherBoutiqueSouris();
+                }else if($url[1]==="casque"){
+                    $ComposantController->afficherBoutiqueCasque();
+                }else if($url[1]==="tapisdesouris"){
+                    $ComposantController->afficherBoutiqueTapisdesouris();
+                }else if($url[1]==="chaise"){
+                    $ComposantController->afficherBoutiqueChaise();
+                }else if($url[1]==="accessoire"){
+                    $ComposantController->afficherBoutiqueAccessoire();
+                }else if($url[1]==="stuffperso"){
+                    $ComposantController->afficherBoutiqueStuffperso();
                 }else if($url[1]==="a"){
                     $ComposantController->ajoutComposant();
                 }else if($url[1]==="m"){

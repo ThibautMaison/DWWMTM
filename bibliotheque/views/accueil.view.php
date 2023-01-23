@@ -10,7 +10,6 @@ ob_start();
 	</div>
 		<img class="" src="/public/Accueil/Daco_5738059.png" alt="main">
 </div>
-
 <?php
 $content=ob_get_clean();
 $Name="Page Accueil";

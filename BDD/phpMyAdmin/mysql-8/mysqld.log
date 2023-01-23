@@ -192,3 +192,15 @@
 2023-01-23T12:51:41.105206Z 0 [Warning] [MY-010918] [Server] 'default_authentication_plugin' is deprecated and will be removed in a future release. Please use authentication_policy instead.
 2023-01-23T12:51:41.105253Z 0 [System] [MY-010116] [Server] C:\laragon\bin\mysql\mysql-8.0.30-winx64\bin\mysqld (mysqld 8.0.30) starting as process 9768
 2023-01-23T12:51:41.205426Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2023-01-23T15:43:20.269274Z 0 [Warning] [MY-010097] [Server] Insecure configuration for --secure-file-priv: Current value does not restrict location of generated files. Consider setting it to a valid, non-empty path.
+2023-01-23T15:43:20.269308Z 0 [Warning] [MY-010918] [Server] 'default_authentication_plugin' is deprecated and will be removed in a future release. Please use authentication_policy instead.
+2023-01-23T15:43:20.269329Z 0 [System] [MY-010116] [Server] C:\laragon\bin\mysql\mysql-8.0.30-winx64\bin\mysqld (mysqld 8.0.30) starting as process 9744
+2023-01-23T15:43:20.281892Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2023-01-23T15:43:20.716164Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2023-01-23T15:43:20.868687Z 0 [System] [MY-010229] [Server] Starting XA crash recovery...
+2023-01-23T15:43:20.871076Z 0 [System] [MY-010232] [Server] XA crash recovery finished.
+2023-01-23T15:43:20.960713Z 0 [Warning] [MY-013829] [Server] Missing data directory for ICU regular expressions: C:\laragon\bin\mysql\mysql-8.0.30-winx64\lib\private\.
+2023-01-23T15:43:20.964778Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2023-01-23T15:43:20.965060Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2023-01-23T15:43:20.984788Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2023-01-23T15:43:20.984834Z 0 [System] [MY-010931] [Server] C:\laragon\bin\mysql\mysql-8.0.30-winx64\bin\mysqld: ready for connections. Version: '8.0.30'  socket: ''  port: 3306  MySQL Community Server - GPL.

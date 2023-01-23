@@ -11,10 +11,6 @@ class ComposantManager extends Model{
         $this->Boutique[]=$Composant;
     }
 
-    public function ajoutBoutiqueOrdinateur($Ordinateur){
-        $this->Boutique[]=$Ordinateur;
-    }
-
     public function ajoutUsers($User){
         $this->Users[]=$User;
     }
@@ -114,7 +110,7 @@ class ComposantManager extends Model{
 
         public function chargementBoutiqueCasque(){
             // appelle connexion à la bdd
-            $req=$this->getBdd()->prepare("SELECT * FROM Boutique where idCategorie = '4' ");
+            $req=$this->getBdd()->prepare("SELECT * FROM Boutique where idCategorie = '5' ");
             // on execute req
             $req->execute();
             // permet deviter des doublons
@@ -130,6 +126,78 @@ class ComposantManager extends Model{
     
         }
 
+        public function chargementBoutiqueTapisdesouris(){
+            // appelle connexion à la bdd
+            $req=$this->getBdd()->prepare("SELECT * FROM Boutique where idCategorie = '6' ");
+            // on execute req
+            $req->execute();
+            // permet deviter des doublons
+            $mesBoutique=$req->fetchAll(PDO::FETCH_ASSOC);
+            $req->closeCursor();
+    
+    
+            foreach($mesBoutique as $Tapisdesouris){
+                // genere Composant de la classe Composant
+                $l=new Composant($Tapisdesouris["id"],$Tapisdesouris["Name"],$Tapisdesouris["Description"],$Tapisdesouris["Lien"],$Tapisdesouris["image"],$Tapisdesouris["idCategorie"]);
+                $this->ajoutBoutique($l);
+            }
+    
+        }
+
+        public function chargementBoutiqueChaise(){
+            // appelle connexion à la bdd
+            $req=$this->getBdd()->prepare("SELECT * FROM Boutique where idCategorie = '7' ");
+            // on execute req
+            $req->execute();
+            // permet deviter des doublons
+            $mesBoutique=$req->fetchAll(PDO::FETCH_ASSOC);
+            $req->closeCursor();
+    
+    
+            foreach($mesBoutique as $Chaise){
+                // genere Composant de la classe Composant
+                $l=new Composant($Chaise["id"],$Chaise["Name"],$Chaise["Description"],$Chaise["Lien"],$Chaise["image"],$Chaise["idCategorie"]);
+                $this->ajoutBoutique($l);
+            }
+    
+        }
+
+        public function chargementBoutiqueAccessoire(){
+            // appelle connexion à la bdd
+            $req=$this->getBdd()->prepare("SELECT * FROM Boutique where idCategorie = '9' ");
+            // on execute req
+            $req->execute();
+            // permet deviter des doublons
+            $mesBoutique=$req->fetchAll(PDO::FETCH_ASSOC);
+            $req->closeCursor();
+    
+    
+            foreach($mesBoutique as $Accessoire){
+                // genere Composant de la classe Composant
+                $l=new Composant($Accessoire["id"],$Accessoire["Name"],$Accessoire["Description"],$Accessoire["Lien"],$Accessoire["image"],$Accessoire["idCategorie"]);
+                $this->ajoutBoutique($l);
+            }
+    
+        }
+
+        public function chargementBoutiqueStuffperso(){
+            // appelle connexion à la bdd
+            $req=$this->getBdd()->prepare("SELECT * FROM Boutique where Name IN ('BENQ XL2566K' , 'GSR-SE RED' , 'HYPERX ALPHA' , 'X2 MINI' , 'ZOWIE CAMADE' , 'PC GAMING')");
+            // on execute req
+            $req->execute();
+            // permet deviter des doublons
+            $mesBoutique=$req->fetchAll(PDO::FETCH_ASSOC);
+            $req->closeCursor();
+    
+    
+            foreach($mesBoutique as $Stuffperso){
+                // genere Composant de la classe Composant
+                $l=new Composant($Stuffperso["id"],$Stuffperso["Name"],$Stuffperso["Description"],$Stuffperso["Lien"],$Stuffperso["image"],$Stuffperso["idCategorie"]);
+                $this->ajoutBoutique($l);
+            }
+    
+        }
+
     public function getComposantById($id){
         for($i=0;$i<count($this->Boutique);$i++){
             if($this->Boutique[$i]->getId() === $id){
@@ -140,8 +208,8 @@ class ComposantManager extends Model{
 
     public function ajoutComposantBd($Name,$Description,$Lien,$image,$idCategorie){
         $req="
-        INSERT INTO Boutique (Name,Description,Lien,image)
-        value (:Name,:Description,:Lien,:image)";
+        INSERT INTO Boutique (Name,Description,Lien,image,idCategorie)
+        value (:Name,:Description,:Lien,:image,:idCategorie)";
         // connexion à bd
         $stmt=$this->getBdd()->prepare($req);
         // on met en lien la req avec ce qu'il y a dans la bd
@@ -149,6 +217,7 @@ class ComposantManager extends Model{
         $stmt->bindValue(":Description",$Description,PDO::PARAM_STR);
         $stmt->bindValue(":Lien",$Lien,PDO::PARAM_STR);
         $stmt->bindValue(":image",$image,PDO::PARAM_STR);
+        $stmt->bindValue(":idCategorie",$idCategorie,PDO::PARAM_INT);
         // sert à executer requete et a ajouter données à la bdd
         $resultat=$stmt->execute();
         // ferme connexion abdd
@@ -186,7 +255,7 @@ class ComposantManager extends Model{
     public function modificationComposantBd($id,$Name,$Description,$Lien,$image,$idCategorie){
         $req = "
         UPDATE boutique
-        SET Name= :Name,Description= :Description,Lien= :Lien,image= :image
+        SET Name= :Name,Description= :Description,Lien= :Lien,image= :image,idCategorie= :idCategorie
         WHERE id= :id";
 
         // connexion à bd
@@ -196,6 +265,7 @@ class ComposantManager extends Model{
         $stmt->bindValue(":Description", $Description, PDO::PARAM_STR);
         $stmt->bindValue(":Lien",$Lien,PDO::PARAM_STR);
         $stmt->bindValue(":image", $image, PDO::PARAM_STR);
+        $stmt->bindValue(":idCategorie", $idCategorie, PDO::PARAM_INT);
         // sert à executer requete et a ajouter données à la bdd
         $resultat=$stmt->execute();
         // ferme connexion abdd
@@ -208,6 +278,7 @@ class ComposantManager extends Model{
             $this->getComposantById($id)->setDescription($Description);
             $this->getComposantById($id)->setLien($Lien);
             $this->getComposantById($id)->setImage($image);
+            $this->getComposantById($id)->setidCategorie($idCategorie);
         }
     }
 }

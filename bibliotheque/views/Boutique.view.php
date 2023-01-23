@@ -13,18 +13,18 @@ ob_start();
 <div class="d-grid gap-2 col-6 mx-auto mt-5">
     <a href="<?= URL ?>Boutique/a" class="btn btn-success">Ajouter</a>
 </div>
-<div class="d-flex align-items-start justify-content-evenly mt-5 mx-5" >
+<div class="d-flex align-items-start justify-content-evenly mt-5 mx-5">
     <div class="d-flex gap-4 flex-column w-25 mx-5" style="margin-left: 200px;">
         <div class="card border-primary border-3 mx-3" style="background-color: #c7c7c7;" >
             <h3 class="mt-4 mb-2 gap-2 d-flex justify-content-center text-uppercase fs-2 fw-bold">Produits</h3>
-            <a class="btn btn-outline-light rounded text-dark mt-4 mb-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique/ordinateur">Ordinateur</a>
-            <a class="btn rounded text-dark my-2 gap-2 fw-semibold fst-italic" href="">Ecrans</a>
-            <a class="btn rounded text-dark my-2 gap-2 fw-semibold fst-italic" href="">Claviers</a>
-            <a class="btn rounded text-dark my-2 gap-2 fw-semibold fst-italic" href="">Souris</a>
-            <a class="btn rounded text-dark my-2 gap-2 fw-semibold fst-italic" href="">Casques</a>
-            <a class="btn rounded text-dark my-2 gap-2 fw-semibold fst-italic" href="">Tapis de souris</a>
-            <a class="btn rounded text-dark my-2 gap-2 fw-semibold fst-italic" href="">Chaise</a>
-            <a class="btn rounded text-dark my-2 gap-2 fw-semibold fst-italic" href="">Accessoires</a>
+            <a class="btn rounded text-dark my-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique/ordinateur">Ordinateur</a>
+            <a class="btn rounded text-dark my-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique/ecran">Ecrans</a>
+            <a class="btn rounded text-dark my-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique/clavier">Claviers</a>
+            <a class="btn rounded text-dark my-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique/souris">Souris</a>
+            <a class="btn rounded text-dark my-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique/casque">Casques</a>
+            <a class="btn rounded text-dark my-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique/tapisdesouris">Tapis de souris</a>
+            <a class="btn rounded text-dark my-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique/chaise">Chaise</a>
+            <a class="btn rounded text-dark my-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique/accessoire">Accessoires</a>
         </div>
         <div class="card border-primary border-3 mx-3" style="background-color: #c7c7c7;">
             <p class="mt-4 mb-2 mx-4 gap-2 d-flex text-center fw-semibold fst-italic">Découvrez ce que j'utilise comme matériel au quotidien</p>
@@ -32,27 +32,27 @@ ob_start();
         </div>
     </div>
 
-<div class="d-flex flex-wrap w-75">
+    <div class="d-flex flex-wrap w-75">
         <?php
         for ($i = 0; $i < count($Boutique); $i++) : ?>
-        <a href="<?=$Boutique[$i]->getLien() ?>">
-            <div class="d-grid ms-2 mb-2">
-                <div class="card" style="height: 400px;width: 300px;background-color: #c7c7c7;">
-                    <img src="/public/images/<?= $Boutique[$i]->getImage() ?>" class=" d-grid gap-2 mx-auto d-flex justify-content-center mt-4" style="height: 250px;width: 250px;">
-                    <h5 class="mt-4 d-grid gap-2 mx-auto d-flex justify-content-center <?= $Boutique[$i]->getId() ?>"><?= $Boutique[$i]->getName() ?></h5>
-                    <div class="d-flex justify-content-center gap-2">
-                        <form action="<?= URL ?>Boutique/m/<?= $Boutique[$i]->getId() ?>" method="POST">
-                            <button class="btn btn-warning mx-auto d-flex justify-content-center" type="submit">Modifier</button>
-                        </form>
-                        <form action="<?= URL ?>Boutique/s/<?= $Boutique[$i]->getId() ?>" onSubmit="return confirm('Voulez-vous vraiment supprimer le produit ?')" method="POST">
-                            <button class="btn btn-danger mx-auto d-flex justify-content-center" type="submit">Supprimer</button>
-                        </form>
+            <a href="<?= $Boutique[$i]->getLien() ?>">
+                <div class="d-grid ms-2 mb-2">
+                    <div class="card" style="height: 350px;width: 250px;background-color: #c7c7c7;">
+                        <img src="/public/images/<?= $Boutique[$i]->getImage() ?>" class=" d-grid gap-2 mx-auto d-flex justify-content-center mt-4" style="height: 200px;width: 200px;">
+                        <h5 class="mt-4 d-grid gap-2 mx-auto d-flex justify-content-center <?= $Boutique[$i]->getId() ?>"><?= $Boutique[$i]->getName() ?></h5>
+                        <div class="d-flex justify-content-center gap-2">
+                            <form action="<?= URL ?>Boutique/m/<?= $Boutique[$i]->getId() ?>" method="POST">
+                                <button class="btn btn-warning mx-auto d-flex justify-content-center my-2" type="submit">Modifier</button>
+                            </form>
+                            <form action="<?= URL ?>Boutique/s/<?= $Boutique[$i]->getId() ?>" onSubmit="return confirm('Voulez-vous vraiment supprimer le produit ?')" method="POST">
+                                <button class="btn btn-danger mx-auto d-flex justify-content-center my-2" type="submit">Supprimer</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>    
             </a>
         <?php endfor ?>
-</div>
+    </div>
 
 </div>
 <?php

@@ -3,11 +3,26 @@ require_once "models/ComposantManager.class.php";
 
 class BoutiqueController {
     private $ComposantManager;
+    private $OrdinateurManager;
+    private $EcranManager;
+    private $ClavierManager;
+    private $SourisManager;
+    private $CasqueManager;
 
     public function __construct(){
         // on instancie et charge les Boutique
         $this->ComposantManager=new ComposantManager;
         $this->ComposantManager->chargementBoutique();
+        $this->OrdinateurManager=new ComposantManager;
+        $this->OrdinateurManager->chargementBoutiqueOrdinateur();
+        $this->EcranManager=new ComposantManager;
+        $this->EcranManager->chargementBoutiqueEcran();
+        $this->ClavierManager=new ComposantManager;
+        $this->ClavierManager->chargementBoutiqueClavier();
+        $this->SourisManager=new ComposantManager;
+        $this->SourisManager->chargementBoutiqueSouris();
+        $this->CasqueManager=new ComposantManager;
+        $this->CasqueManager->chargementBoutiqueCasque();
     }
     
     public function afficherBoutique(){
@@ -16,10 +31,34 @@ class BoutiqueController {
         require "views/Boutique.view.php";
         // qd on require, tous ce qui est declarer ds fonction et va dans require
     }
-    public function afficherOrdinateur(){
+    public function afficherBoutiqueOrdinateur(){
         // $Boutique recup le tableau des Boutique
-        $Boutique=$this->ComposantManager->getBoutique();
+        $Boutique=$this->OrdinateurManager->getBoutique();
         require "views/Ordinateur.view.php";
+        // qd on require, tous ce qui est declarer ds fonction et va dans require
+    }
+    public function afficherBoutiqueEcran(){
+        // $Boutique recup le tableau des Boutique
+        $Boutique=$this->EcranManager->getBoutique();
+        require "views/Ecran.view.php";
+        // qd on require, tous ce qui est declarer ds fonction et va dans require
+    }
+    public function afficherBoutiqueClavier(){
+        // $Boutique recup le tableau des Boutique
+        $Boutique=$this->ClavierManager->getBoutique();
+        require "views/Clavier.view.php";
+        // qd on require, tous ce qui est declarer ds fonction et va dans require
+    }
+    public function afficherBoutiqueSouris(){
+        // $Boutique recup le tableau des Boutique
+        $Boutique=$this->SourisManager->getBoutique();
+        require "views/Souris.view.php";
+        // qd on require, tous ce qui est declarer ds fonction et va dans require
+    }
+    public function afficherBoutiqueCasque(){
+        // $Boutique recup le tableau des Boutique
+        $Boutique=$this->CasqueManager->getBoutique();
+        require "views/Casque.view.php";
         // qd on require, tous ce qui est declarer ds fonction et va dans require
     }
 
@@ -39,7 +78,7 @@ class BoutiqueController {
         $repertoire="public/images/";
         $nomImageAjoute= $this->ajoutImage($file,$repertoire);
         // ajouter le Composant en bdd
-        $this->ComposantManager->ajoutComposantBd($_POST["Name"],$_POST["Description"],$_POST["Lien"],$nomImageAjoute);
+        $this->ComposantManager->ajoutComposantBd($_POST["Name"],$_POST["Description"],$_POST["Lien"],$_POST["idCategorie"],$nomImageAjoute);
         // redirige lutilisateur vers la pages des Boutique
         header("Location: ".URL."Boutique");
     }
@@ -108,7 +147,7 @@ class BoutiqueController {
         }else{
             $nomImageToAdd = $imageActuel;
         }
-        $this->ComposantManager->modificationComposantBd((int)$_POST["identifiant"], $_POST["Name"], $_POST["Description"],$_POST["Lien"],$nomImageToAdd);
+        $this->ComposantManager->modificationComposantBd((int)$_POST["identifiant"], $_POST["Name"], $_POST["Description"],$_POST["Lien"],$_POST["idCategorie"],$nomImageToAdd);
         header("Location: ".URL."Boutique");
     }
 }

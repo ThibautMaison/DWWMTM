@@ -9,7 +9,7 @@ ob_start();
         <input type="text" class="form-control" id="Pseudo" name="Pseudo" placeholder="Pseudo :">
         <!-- id sert pour js et css -->
     </div>
-    <div class="form-group mb-4 ">
+    <div class="form-group mb-4">
         <label class="text-white" for="Password"></label>
         <input type="password" class="form-control" id="Password" name="Password" placeholder="Password :">
     </div>

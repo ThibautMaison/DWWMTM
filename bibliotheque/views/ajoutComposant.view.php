@@ -2,18 +2,18 @@
 ob_start()
 ?>
 
-<form method="POST" action="<?= URL ?>Boutique/av" enctype="multipart/form-data" style="margin-bottom: 200px;margin-top: 200px;">
+<form method="POST" action="<?= URL ?>Boutique/av" enctype="multipart/form-data" class="d-grid gap-2 col-6 mx-auto mt-5">
 <!-- enctype="multipart/form-data" obliger de le mettre quand on charge un fichier -->
-    <div class="form-group" style="margin-bottom: 50px;margin-top: 50px;" >
+    <div class="form-group mb-2">
         <label class="text-white" for="Name">Name :</label>
         <input type="text" class="form-control" id="Name" name="Name">
         <!-- id sert pour js et css -->
     </div>
-    <div class="form-group" style="margin-bottom: 50px;margin-top: 50px;">
+    <div class="form-group mb-4" style="margin-bottom: 50px;margin-top: 50px;">
         <label class="text-white" for="Description">Description :</label>
         <input type="text" class="form-control" id="Description" name="Description">
     </div>
-    <div class="form-group" style="margin-bottom: 50px;margin-top: 50px;">
+    <div class="form-group mb-4" style="margin-bottom: 50px;margin-top: 50px;">
         <label class="text-white" for="Lien">Lien :</label>
         <input type="text" class="form-control" id="Lien" name="Lien">
     </div>

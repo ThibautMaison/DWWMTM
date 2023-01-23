@@ -34,14 +34,14 @@
         <?php
         if (isset($_SESSION['Pseudo'])) { ?>
           <div class="btn-group dropdown-end mx-5">
-            <a type="button" class="btn btndark d-flex align-items-center" data-bs-toggle="dropdown" aria-expanded="false">
+            <a type="button" class="btn btn-dark text-white d-flex rounded justify-content-center" data-bs-toggle="dropdown" aria-expanded="false">
               COMPTE             
               <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle ms-2" height="22"
               alt="" loading="lazy" />
             </a>
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start bg-dark">
-              <li><a class="btn btn-dark text-white d-flex justify-content-center" href="">Parametre</a></li>
-              <li><a class="btn btn-dark text-white d-flex justify-content-center" href="<?= URL ?>logout">Deconnexion</a></li>
+              <li><a class="btn btn-dark text-white rounded d-flex justify-content-center" href="">Parametre</a></li>
+              <li><a class="btn btn-dark text-white rounded d-flex justify-content-center" href="<?= URL ?>logout">Deconnexion</a></li>
             </ul>
           </div>
         <?php

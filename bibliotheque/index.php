@@ -56,7 +56,13 @@ try{
                     // afficher le Composant concerner
                     $ComposantController->afficherComposant((int)$url[2]);
                 }else if($url[1]==="ordinateur"){
-                    $ComposantController->afficherOrdinateur();
+                    $ComposantController->afficherBoutiqueOrdinateur();
+                }else if($url[1]==="ecran"){
+                    $ComposantController->afficherBoutiqueEcran();
+                }else if($url[1]==="clavier"){
+                    $ComposantController->afficherBoutiqueClavier();
+                }else if($url[1]==="souris"){
+                    $ComposantController->afficherBoutiqueSouris();
                 }else if($url[1]==="a"){
                     $ComposantController->ajoutComposant();
                 }else if($url[1]==="m"){

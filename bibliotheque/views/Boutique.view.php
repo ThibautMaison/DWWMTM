@@ -43,7 +43,7 @@ if (isset($_SESSION['Pseudo'])) {
         <?php
         for ($i = 0; $i < count($Boutique); $i++) : ?>
             <a href="<?= $Boutique[$i]->getLien() ?>">
-                <div class="d-grid ms-2 mb-2">
+                <div class="d-grid ms-3 mb-3 ">
                     <div class="card mx-auto" style="background-color: #c7c7c7;">
                         <img src="/public/images/<?= $Boutique[$i]->getImage() ?>" class=" d-grid gap-2 mx-3 d-flex justify-content-center mt-4" style="height: 200px;width: 200px;">
                         <h5 class="mb-2 d-grid gap-2 mx-auto d-flex justify-content-center <?= $Boutique[$i]->getId() ?>"><?= $Boutique[$i]->getName() ?></h5>

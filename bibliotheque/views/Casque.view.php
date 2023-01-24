@@ -42,7 +42,7 @@ if (isset($_SESSION['Pseudo'])) {
 <div class="d-flex flex-wrap w-75 mt-5">
         <?php
         for ($i = 0; $i < count($Boutique); $i++) : ?>
-        <a href="<?=$Boutique[$i]->getLien()?>">
+        <a href="<?= URL ?>Boutique/l/<?= $Boutique[$i]->getId() ?>">
             <div class="d-grid ms-2 mb-2 " >
                 <div class="card mx-auto" style="background-color: #c7c7c7;">
                     <img src="/public/images/<?= $Boutique[$i]->getImage() ?>" class=" d-grid gap-2 mx-3 d-flex justify-content-center mt-4" style="height: 200px;width: 200px;">

@@ -30,8 +30,8 @@ if (isset($_SESSION['Pseudo'])) {
             <a class="btn rounded text-dark col-10 mx-auto my-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique/souris">Souris</a>
             <a class="btn rounded text-dark col-10 mx-auto my-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique/casque">Casques</a>
             <a class="btn rounded text-dark col-10 mx-auto my-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique/tapisdesouris">Tapis de souris</a>
-            <a class="btn rounded text-dark col-10 mx-auto my-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique/chaise">Chaise</a>
-            <a class="btn btn-dark rounded col-10 mx-auto rounded text-white my-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique/accessoire">Accessoires</a>
+            <a class="btn btn-dark rounded col-10 mx-auto rounded text-white my-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique/chaise">Chaise</a>
+            <a class="btn rounded text-dark col-10 mx-auto my-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique/accessoire">Accessoires</a>
         </div>
         <div class="card border-primary border-3 mx-3" style="background-color: #c7c7c7;">
             <p class="mt-4 mb-2 mx-4 gap-2 d-flex text-center fw-semibold fst-italic">Découvrez ce que j'utilise comme matériel au quotidien</p>
@@ -42,7 +42,7 @@ if (isset($_SESSION['Pseudo'])) {
 <div class="d-flex flex-wrap w-75 mt-5">
         <?php
         for ($i = 0; $i <count($Boutique); $i++) : ?>
-        <a href="<?=$Boutique[$i]->getLien()?>">
+        <a href="<?= URL ?>Boutique/l/<?= $Boutique[$i]->getId() ?>">
             <div class="d-grid ms-2 mb-2" >
                 <div class="card mx-auto" style="background-color: #c7c7c7;">
                     <img src="/public/images/<?= $Boutique[$i]->getImage() ?>" class=" d-grid gap-2 mx-3 d-flex justify-content-center mt-4" style="height: 200px;width: 200px;">

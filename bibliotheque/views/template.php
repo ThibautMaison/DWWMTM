@@ -11,33 +11,24 @@
 </head>
 
 <body style="background-color: #0C0C0C;">
-  <nav class="navbar navbar-expand-lg navbar-dark p-3 rounded mb-5">
-    <div class="container-fluid " style="margin-bottom: 30px; margin-top: 30px;">
-      <div class="navbar-collapse mx-5">
-        <ul class="navbar-nav me-auto ms-5">
-          <li class="nav-item">
-            <a class="nav-link text-white" href="<?= URL ?>accueil">Accueil</a>
-          </li>
-          <li>
-            <a class="nav-link text-white" href="<?= URL ?>Boutique">Boutique</a>
-          </li>
-          <li>
-            <a class="nav-link text-white" href="<?= URL ?>Forum">Forum</a>
-          </li>
-          <li>
-            <a class="nav-link text-white" href="<?= URL ?>Bou">Bout</a>
-          </li>
-          <li>
-            <a class="nav-link text-white" href="<?= URL ?>Contact">Contact</a>
-          </li>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container my-5">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+          <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="<?= URL ?>accueil">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="<?= URL ?>Boutique">Boutique</a></li>
+          <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="<?= URL ?>Forum">Forum</a></li>
+          <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="<?= URL ?>Bou">test</a></li>
+          <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="<?= URL ?>Contact">Contact</a></li>
         </ul>
-        <?php
+        <form class="">
+          <?php
         if (isset($_SESSION['Pseudo'])) { ?>
           <div class="btn-group dropdown-end mx-5">
-            <a type="button" class="btn btn-dark text-white d-flex rounded justify-content-center" data-bs-toggle="dropdown" aria-expanded="false">
-              COMPTE             
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle ms-2" height="22"
-              alt="" loading="lazy" />
+            <a type="button" class="btn btn-outline-dark text-white rounded" data-bs-toggle="dropdown" aria-expanded="false">
+              COMPTE
+              <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle ms-2" height="22" alt="" loading="lazy" />
             </a>
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start bg-dark">
               <li><a class="btn btn-dark text-white rounded d-flex justify-content-center" href="">Parametre</a></li>
@@ -46,10 +37,12 @@
           </div>
         <?php
         } else { ?>
-          <a class="btn btn-dark text-white d-flex justify-content-center me-4" href="<?= URL ?>connexion">CONNEXION</a>
-          <a class="btn btn-dark text-white d-flex justify-content-center me-5" href="<?= URL ?>inscription">INSCRIPTION</a>
+          <a class="btn btn-outline-dark text-white me-2" href="<?= URL ?>connexion">CONNEXION</a>
+          <a class="btn btn-outline-dark text-white" href="<?= URL ?>inscription">INSCRIPTION</a>
         <?php }
         ?>
+
+        </form>
       </div>
     </div>
   </nav>
@@ -61,7 +54,7 @@
 
 
 
-  <footer class="text-center text-lg-start text-white" style="background-color: #161616;">
+  <footer class="text-center text-lg-start text-white" style="background-color: #161616;bottom: 0;">
     <div class="container p-4 pb-0 ">
       <section class="">
         <div class="row mt-5">

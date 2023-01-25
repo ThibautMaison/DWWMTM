@@ -2,7 +2,7 @@
 ob_start()?>
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="<?=URL ?>public/images/<?= $Composant->getImage() ?>" alt="..." /></div>
+                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0 rounded-circle" src="<?=URL ?>public/images/<?= $Composant->getImage() ?>" alt="..." /></div>
                     <div class="col-md-6">
                         <h1 class="display-5 fw-bolder text-white"><?= $Composant->getName() ?></h1>
                         <div class="fs-5 mb-4">

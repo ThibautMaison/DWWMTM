@@ -14,6 +14,10 @@ ob_start()
         <input type="text" class="form-control" id="Description" name="Description">
     </div>
     <div class="form-group mb-4" style="margin-bottom: 50px;margin-top: 50px;">
+        <label class="text-white" for="Prix">Prix :</label>
+        <input type="text" class="form-control" id="Prix" name="Prix">
+    </div>
+    <div class="form-group mb-4" style="margin-bottom: 50px;margin-top: 50px;">
         <label class="text-white" for="Lien">Lien :</label>
         <input type="text" class="form-control" id="Lien" name="Lien">
     </div>

@@ -1,60 +1,24 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container px-4 px-lg-5">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Accueil</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Boutique</a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Tous les produits</a></li>
-                        <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Forum</a></li>
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Contact</a></li>
-            </ul>
-            <form class="">
-                <button class="btn btn-outline-dark mt-3" type="submit">
-                    <i class="bi-cart-fill me-1"></i>
-                    CONNEXION
-                </button>
-            </form>
-        </div>
+<?php
+ob_start();
+?><div class="col-10 mx-auto d-flex align-items-center justify-content-evenly text-white mt-5">
+    <div class="">
+        <h1 class="text-white text-uppercase fw-bold mb-5 fst-italic d-flex justify-content-center" style="font-size: 100px;">Boutique</h1>
+        <h2 class="text-white my-5 fs-3 text-center">Trouvez tous mes conseils pour vous équiper le mieux possible.
+            Je ne propose que des produits de très grande qualité et prévus pour durer dans le temps.
+            Je précise que je suis totalement transparent dans le choix des marques.
+            Vous pouvez faire vos choix en toute confiance !</h2>
     </div>
-</nav>
-<!-- Header-->
-<header class="bg-dark py-5">
-    <div class="col-10 mx-auto d-flex align-items-center text-white">
-        <div class="">
-            <h1 class="text-white text-uppercase mb-5 fw-bold fst-italic" style="font-size: 100px;">TAIIZERR</h1>
-            <h2 class="text-white mb-5 fs-3">Bienvenue sur shop.TAIIZERR.fr !
-                Retrouvez mes conseils pour le meilleur matériel et le forum pour vous aider et échanger librement.</h2>
-        </div>
-        <img class="my-5" src="/public/Accueil/Daco_5738059.png" alt="main">
-    </div>
-</header>
-<!-- Section-->
-<section class="py-5">
+    <img class="" src="/public/Accueil/Frame 2.png" alt="main" style="width: 600px;">
+</div>
+<section class="">
     <div class="container px-4 px-lg-5 mt-5">
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             <div class="col mb-5">
-                <div class="card h-100">
-                    <!-- Product image-->
-                    <img class="card-img-top" src="/public/images/24205_benq.png" style="width: 268px;height: 179px;" alt="..." />
-                    <!-- Product details-->
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <!-- Product name-->
-                            <h5 class="fw-bolder">Fancy Product</h5>
-                            <!-- Product price-->
-                            $40.00 - $80.00
-                        </div>
+                <div class="card mx-auto bg-white">
+                    <div style="background-color: #c7c7c7;">
+                        <img src="/public/Accueil/text2.png" class=" d-grid gap-2 d-flex justify-content-center services-list my-3 mx-3" style="height: 200px;width: 220px;">
                     </div>
-                    <!-- Product actions-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                    </div>
+                    <h5 class=" d-grid gap-2 mx-auto d-flex justify-content-center my-4 ">ORDINATEUR</h5>
                 </div>
             </div>
             <div class="col mb-5">

@@ -19,19 +19,19 @@
           <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="<?= URL ?>accueil">Accueil</a></li>
           <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="<?= URL ?>Boutique">Boutique</a></li>
           <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="<?= URL ?>Forum">Forum</a></li>
-          <?php
-          if (isset($_SESSION['Pseudo'])) {
-            if (($_SESSION['Role']) == 1) { ?>
-              <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="<?= URL ?>Admin">Admin</a></li>
-          <?php }
-          } else {
-          } ?>
           <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="<?= URL ?>Contact">Contact</a></li>
         </ul>
         <form class="">
+        <?php
+          if (isset($_SESSION['Pseudo'])) {
+            if (($_SESSION['Role']) == 1) { ?>
+              <a class="text-white text-decoration-none me-3" aria-current="page" href="<?= URL ?>Admin">Admin</a>
+          <?php }
+          } else {
+          } ?>
           <?php
           if (isset($_SESSION['Pseudo'])) { ?>
-            <div class="btn-group dropdown-end mx-5">
+            <div class="btn-group dropdown-end me-5">
               <a type="button" class="btn btn-outline-dark text-white rounded" data-bs-toggle="dropdown" aria-expanded="false">
                 COMPTE
                 <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle ms-2" height="22" alt="" loading="lazy" />

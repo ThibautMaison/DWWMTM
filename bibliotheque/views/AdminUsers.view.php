@@ -4,29 +4,27 @@ ob_start();
 <?php
 if (isset($_SESSION['Pseudo'])) {
     if (($_SESSION['Role']) == 1) { ?>
-        <div class="container">
-            <div class="table-wrapper text-center">
-                <div class="text-white my-4">
-                    <h2>Manage <b>Utilisateurs</b></h2>
+    <div class="container">
+            <div class="text-center mb-5">
+                <div class="text-white my-4 fw-bold text-uppercase">
+                    <h2>Manage Utilisateurs</h2>
                 </div>
             </div>
-            <table class="table table-striped table-hover text-white text-center">
+            <table class="table table-striped table-hover text-white text-center mb-0">
                 <thead>
                     <tr>
                         <th>
                         </th>
                         <th>Pseudo</th>
                         <th>Email</th>
-                        <th>Password</th>
                         <th>Role</th>
                         <th>Action</th>
 
                     </tr>
                 </thead>
-                <div class="d-grid gap-2 col-6 mx-auto mb-3">
-                    <a href="<?= URL ?>Admin/ajoutuser" class="btn btn-success">Ajouter composant</a>
+                <div class="d-grid col-6 mx-auto">
+                    <a href="<?= URL ?>Admin/ajoutuser" class="btn btn-success mb-4">Ajouter composant</a>
                 </div>
-                <tbody>
                     <?php
                     for ($i = 0; $i < count($Users); $i++) : ?>
                         <tr>
@@ -38,7 +36,6 @@ if (isset($_SESSION['Pseudo'])) {
                             </td>
                             <td class="text-white"><?= $Users[$i]->getPseudo() ?></td>
                             <td class="text-white"><?= $Users[$i]->getEmail() ?></td>
-                            <td class="text-white"><?= $Users[$i]->getPassword() ?></td>
                             <td class="text-white"><?= $Users[$i]->getRole() ?></td>
                             <td>
                                 <div class="d-flex justify-content-center mb-2">
@@ -52,10 +49,9 @@ if (isset($_SESSION['Pseudo'])) {
                             </td>
                         </tr>
                     <?php endfor ?>
-                </tbody>
             </table> 
         </div>
-   
+        </div>
 <?php }
 } else {
     header("Location: " . URL . "connexion");

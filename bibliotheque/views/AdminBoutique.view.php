@@ -5,12 +5,12 @@ ob_start();
 if (isset($_SESSION['Pseudo'])) {
     if (($_SESSION['Role']) == 1) { ?>
         <div class="container">
-            <div class="table-wrapper text-center">
-                <div class="text-white my-4">
-                    <h2>Manage <b>Boutique</b></h2>
+        <div class="text-center mb-5">
+                <div class="text-white my-4 fw-bold text-uppercase">
+                    <h2>Manage Utilisateurs</h2>
                 </div>
             </div>
-            <table class="table table-striped table-hover text-white text-center">
+            <table class="table table-striped table-hover text-white text-center mb-0">
                 <thead>
                     <tr>
                         <th>
@@ -24,7 +24,7 @@ if (isset($_SESSION['Pseudo'])) {
 
                     </tr>
                 </thead>
-                <div class="d-grid gap-2 col-6 mx-auto mb-3">
+                <div class="d-grid gap-2 col-6 mx-auto mb-4">
                     <a href="<?= URL ?>Admin/ajoutcomposant" class="btn btn-success">Ajouter composant</a>
                 </div>
                 <tbody>

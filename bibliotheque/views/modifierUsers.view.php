@@ -11,13 +11,10 @@ ob_start()
         <input type="text" class="form-control" id="Email" name="Email" value="<?= $Users->getEmail() ?>">
     </div>
     <div class="form-group mb-4" style="margin-bottom: 50px;margin-top: 50px;">
-        <label class="text-white" for="Password">Password :</label>
-        <input type="text" class="form-control" id="Password" name="Password" value="<?= $Users->getPassword() ?>">
-    </div>
-    <div class="form-group mb-4" style="margin-bottom: 50px;margin-top: 50px;">
         <label class="text-white" for="Role">Role :</label>
         <input type="text" class="form-control" id="Role" name="Role" value="<?= $Users->getRole() ?>">
     </div>
+    <input type="hidden" name="identifiant" value="<?= $Users->getId(); ?>">
     <button type="submit" class="btn btn-primary">Valider</button>
 </form>
 

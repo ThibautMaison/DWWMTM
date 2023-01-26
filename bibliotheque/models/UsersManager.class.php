@@ -57,6 +57,7 @@ class UsersManager extends Model{
         if($stmt->rowCount() > 0){
             $data = $stmt->fetch();
             $_SESSION['Role'] = $data['Role'];
+            $_SESSION['Email'] = $data['Email'];
             if(password_verify($Password, $data['Password'])){
 
                 $_SESSION['Pseudo'] = $Pseudo;
@@ -66,17 +67,16 @@ class UsersManager extends Model{
     $stmt->closeCursor();
     }
 }
-public function modificationUsersBd($id,$Pseudo,$Email,$Password,$Role){
+public function modificationUsersBd($id,$Pseudo,$Email,$Role){
     $req = "
     UPDATE Users
-    SET Pseudo= :Pseudo,Email= :Email,Password= :Password,Role= :Role WHERE id= :id";
+    SET Pseudo= :Pseudo,Email= :Email,Role= :Role WHERE id= :id";
 
     // connexion à bd
     $stmt = $this->getBdd()->prepare($req);
     $stmt->bindValue(":id", $id, PDO::PARAM_INT);
     $stmt->bindValue(":Pseudo", $Pseudo, PDO::PARAM_STR);
     $stmt->bindValue(":Email", $Email, PDO::PARAM_STR);
-    $stmt->bindValue(":Password",$Password,PDO::PARAM_STR);
     $stmt->bindValue(":Role", $Role, PDO::PARAM_INT);
     // sert à executer requete et a ajouter données à la bdd
     $resultat=$stmt->execute();
@@ -91,8 +91,7 @@ public function modificationUsersBd($id,$Pseudo,$Email,$Password,$Role){
         var_dump($id);
         $this->getUsersById($id)->setPseudo($Pseudo);
         $this->getUsersById($id)->setEmail($Email);
-        $this->getUsersById($id)->setPassword($Password);
-        $this->getUsersById($id)->setLien($Role);
+        $this->getUsersById($id)->setRole($Role);
     }
 }
 

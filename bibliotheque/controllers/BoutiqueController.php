@@ -179,7 +179,6 @@ class BoutiqueController {
     public function modificationComposantValidation(){
         $imageActuel = $this->ComposantManager->getComposantById((int)$_POST["identifiant"])->getImage();
         $file = $_FILES['image'];
-
         if($file["size"]>0){
             // supprime ancienne image dans dossier
             unlink("public/images/" . $imageActuel);
@@ -190,7 +189,7 @@ class BoutiqueController {
             $nomImageToAdd = $imageActuel;
         }
         $this->ComposantManager->modificationComposantBd((int)$_POST["identifiant"], $_POST["Name"], $_POST["Description"],$_POST["Prix"],$_POST["Lien"],$nomImageToAdd,$_POST["idCategorie"]);
-        header("Location: ".URL."Admin/boutique");
+        // header("Location: ".URL."Admin/boutique");
     }
 }
 ?>

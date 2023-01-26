@@ -62,9 +62,8 @@ class UserController {
     }
 
     public function modificationUsersValidation(){
-        $imageActuel = $this->UsersManager->getUsersById((int)$_POST["identifiant"]);
-        $this->UsersManager->modificationUsersBd((int)$_POST["identifiant"],$_POST["Pseudo"], $_POST["Email"], $_POST["Password"], $_POST["Role"]);
-        // header("Location: ".URL."Admin/users");
+        $this->UsersManager->modificationUsersBd((int)$_POST["identifiant"],$_POST["Pseudo"], $_POST["Email"], $_POST["Role"]);
+        header("Location: ".URL."Admin/users");
     }
 }
 ?>

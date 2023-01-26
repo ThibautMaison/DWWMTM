@@ -2,7 +2,7 @@
 ob_start();
 
 ?>
-<div class="col-10 mx-auto d-flex align-items-center text-white" >
+<div class="col-10 mx-auto d-flex align-items-center text-white " >
 	<div class="">
 		<h1 class="text-white text-uppercase mb-5 fw-bold fst-italic d-flex justify-content-center " style="font-size: 100px;">TAIIZERR</h1>
 		<h2 class="text-white mb-5 fs-3 text-center">Bienvenue sur shop-TAIIZERR.fr !

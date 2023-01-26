@@ -2,7 +2,7 @@
 ob_start()
 ?>
 
-<form method="POST" action="<?= URL ?>Boutique/av" enctype="multipart/form-data" class="d-grid gap-2 col-6 mx-auto mt-5">
+<form method="POST" action="<?= URL ?>Admin/ajoutvalidationcomposant" enctype="multipart/form-data" class="d-grid gap-2 col-6 mx-auto mt-5">
 <!-- enctype="multipart/form-data" obliger de le mettre quand on charge un fichier -->
     <div class="form-group mb-2">
         <label class="text-white" for="Name">Name :</label>

@@ -24,7 +24,7 @@ class UsersManager extends Model{
     }
     public function getUsersById($id){
         for($i=0;$i<count($this->User);$i++){
-            if($this->User[$i]->getId() === $id){
+            if($this->User[$i]->getId() ==$id){
                 return $this->User[$i];
             }
         }
@@ -66,5 +66,54 @@ class UsersManager extends Model{
     $stmt->closeCursor();
     }
 }
+public function modificationUsersBd($id,$Pseudo,$Email,$Password,$Role){
+    $req = "
+    UPDATE Users
+    SET Pseudo= :Pseudo,Email= :Email,Password= :Password,Role= :Role WHERE id= :id";
+
+    // connexion à bd
+    $stmt = $this->getBdd()->prepare($req);
+    $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+    $stmt->bindValue(":Pseudo", $Pseudo, PDO::PARAM_STR);
+    $stmt->bindValue(":Email", $Email, PDO::PARAM_STR);
+    $stmt->bindValue(":Password",$Password,PDO::PARAM_STR);
+    $stmt->bindValue(":Role", $Role, PDO::PARAM_INT);
+    // sert à executer requete et a ajouter données à la bdd
+    $resultat=$stmt->execute();
+    // ferme connexion abdd
+    $stmt->closeCursor();
+
+
+    // si requete fonctionne 
+    if($resultat>0){
+        // mettre a jour le tableau des Boutique
+
+        var_dump($id);
+        $this->getUsersById($id)->setPseudo($Pseudo);
+        $this->getUsersById($id)->setEmail($Email);
+        $this->getUsersById($id)->setPassword($Password);
+        $this->getUsersById($id)->setLien($Role);
+    }
 }
-?>
+
+public function suppressionUsersBd($id){
+    //  il est interdit de faire une concatenation avec $id, pour la securité
+    $req="
+    DELETE from boutique where id= :idUsers";
+    // connexion à bd
+    $stmt=$this->getBdd()->prepare($req);
+    $stmt->bindValue(":idUsers",$id,PDO::PARAM_INT);
+    // sert à executer requete et a ajouter données à la bdd
+    $resultat=$stmt->execute();
+    // ferme connexion abdd
+    $stmt->closeCursor();
+
+    // si requete fonctionne 
+    if($resultat>0){
+        // on supprime le Users au tableau de Users
+        $Users=$this->getUsersById($id);
+        unset($Users);
+    }
+}
+
+}

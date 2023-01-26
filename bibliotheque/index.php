@@ -1,97 +1,121 @@
-<?php 
+<?php
 // definie la constante URL
-define("URL",str_replace("index.php","",(isset($_SERVER["HTTPS"])?"https":"http").
-"://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
+define("URL", str_replace("index.php", "", (isset($_SERVER["HTTPS"]) ? "https" : "http") .
+    "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
 
 // recup le fichier Boutiquecontroller
 require_once "controllers/BoutiqueController.php";
-$ComposantController=new BoutiqueController;
+$ComposantController = new BoutiqueController;
 
 // recup le fichier Usercontroller
 require_once "controllers/UserController.php";
-$UsersController=new UserController;
+$UsersController = new UserController;
 
-try{
+try {
     // si lutilisateur est nulle part dans url page accueil
-    if(empty($_GET["page"])){
+    if (empty($_GET["page"])) {
         require "views/accueil.view.php";
     }
     // permet de gerer le chgment de page quand utilisateur est deja dans une autre page
-    else{
-        $url=explode("/",filter_var($_GET["page"],FILTER_SANITIZE_URL));
+    else {
+        $url = explode("/", filter_var($_GET["page"], FILTER_SANITIZE_URL));
 
         // on test premier element de url
-        switch($url[0]){
-            case"accueil" : require "views/accueil.view.php";
-            break;
-            case"Forum" : require "views/Forum.view.php";
-            break;
-            case"Bou" : require "views/Bou.view.php";
-            break;
-            case"Contact" : require "views/Contact.view.php";
-            break;
-            case"logout" : require "views/logout.php";
-            break;
-            case"inscription" :
-                if(empty($url[1])){
+        switch ($url[0]) {
+            case "accueil":
+                require "views/accueil.view.php";
+                break;
+            case "Forum":
+                require "views/Forum.view.php";
+                break;
+            case "Admin":
+                if (empty($url[1])) {
+                    require "views/Admin.view.php";
+                } else if ($url[1] === "boutique") {
+                    // afficher le Users concerner
+                    $ComposantController->afficherBoutiqueAdmin();
+                }else if ($url[1] === "users") {
+                    // afficher le Users concerner
+                    $UsersController->afficherUsersAdmin();
+                } else if ($url[1] === "ajoutuser") {
+                    $UsersController->ajoutUsers();
+                }else if ($url[1] === "ajoutvalidationuser") {
+                    $UsersController->ajoutUsersValidationAdmin();
+                }else if ($url[1] === "ajoutcomposant") {
+                    $ComposantController->ajoutComposant();
+                }else if ($url[1] === "ajoutvalidationcomposant") {
+                    $ComposantController->ajoutComposantValidation();
+                }else if ($url[1] === "modificationcomposant") {
+                    $ComposantController->modificationComposant((int)$url[2]);
+                }else if ($url[1] === "modificationvalidationcomposant") {
+                    $ComposantController->modificationComposantValidation();
+                }else if ($url[1] === "modificationuser") {
+                    $UsersController->modificationUsers((int)$url[2]);
+                }else if ($url[1] === "modificationvalidationuser") {
+                    $UsersController->modificationUsersValidation();
+                } else if ($url[1] === "supprimercomposant") {
+                    $ComposantController->suppressionComposant((int)$url[2]);
+                } else if ($url[1] === "supprimeruser") {
+                    $UsersController->suppressionUsers((int)$url[2]);
+                };
+                break;
+            case "Contact":
+                require "views/Contact.view.php";
+                break;
+            case "logout":
+                require "views/logout.php";
+                break;
+            case "inscription":
+                if (empty($url[1])) {
                     $UsersController->inscription();
-                }else if($url[1]==="9"){
+                } else if ($url[1] === "9") {
                     // afficher le Users concerner
                     $UsersController->ajoutUsersValidation();
                 };
-            break;
-            case"connexion" :                
-                if(empty($url[1])){
-                $UsersController->connexion();
-            }else if($url[1]==="3"){
-                // afficher le Users concerner
-                $UsersController->UsersValidation();
-            };
-            break;
-            case"Boutique" :
-            // si on a rien en tant que 2ème élément dans mon URL
-                if(empty($url[1])){
+                break;
+            case "connexion":
+                if (empty($url[1])) {
+                    $UsersController->connexion();
+                } else if ($url[1] === "3") {
+                    // afficher le Users concerner
+                    $UsersController->UsersValidation();
+                };
+                break;
+            case "Boutique":
+                // si on a rien en tant que 2ème élément dans mon URL
+                if (empty($url[1])) {
                     $ComposantController->afficherBoutique();
-                }else if($url[1]==="l"){
+                } else if ($url[1] === "l") {
                     // afficher le Composant concerner
                     $ComposantController->afficherComposant((int)$url[2]);
-                }else if($url[1]==="ordinateur"){
+                } else if ($url[1] === "ordinateur") {
                     $ComposantController->afficherBoutiqueOrdinateur();
-                }else if($url[1]==="ecran"){
+                } else if ($url[1] === "ecran") {
                     $ComposantController->afficherBoutiqueEcran();
-                }else if($url[1]==="clavier"){
+                } else if ($url[1] === "clavier") {
                     $ComposantController->afficherBoutiqueClavier();
-                }else if($url[1]==="souris"){
+                } else if ($url[1] === "souris") {
                     $ComposantController->afficherBoutiqueSouris();
-                }else if($url[1]==="casque"){
+                } else if ($url[1] === "casque") {
                     $ComposantController->afficherBoutiqueCasque();
-                }else if($url[1]==="tapisdesouris"){
+                } else if ($url[1] === "tapisdesouris") {
                     $ComposantController->afficherBoutiqueTapisdesouris();
-                }else if($url[1]==="chaise"){
+                } else if ($url[1] === "chaise") {
                     $ComposantController->afficherBoutiqueChaise();
-                }else if($url[1]==="accessoire"){
+                } else if ($url[1] === "accessoire") {
                     $ComposantController->afficherBoutiqueAccessoire();
-                }else if($url[1]==="stuffperso"){
+                } else if ($url[1] === "stuffperso") {
                     $ComposantController->afficherBoutiqueStuffperso();
-                }else if($url[1]==="a"){
-                    $ComposantController->ajoutComposant();
-                }else if($url[1]==="m"){
-                    $ComposantController->modificationComposant((int)$url[2]);
-                }else if($url[1]==="s"){
-                    $ComposantController->suppressionComposant((int)$url[2]);
-                }else if($url[1]==="av"){
-                    $ComposantController->ajoutComposantValidation();
-                }else if($url[1]==="mv"){
-                    $ComposantController->modificationComposantValidation();
-                }else{
+                }else {
                     // lever l'erreur si page nexiste pas
                     throw new Exception("La page n'existe pas");
                 }
-            break;
-            // c'est une sorte de else ! De plus on lève lerreur
-            default : throw new Exception("La page n'existe pas");
+                break;
+                // c'est une sorte de else ! De plus on lève lerreur
+            default:
+                throw new Exception("La page n'existe pas");
         }
     }
-}catch(Exception $e){   //permet dafficher le message
+} catch (Exception $e) {   //permet dafficher le message
     echo $e->getMessage();
 }

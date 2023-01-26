@@ -16,7 +16,6 @@ class ComposantManager extends Model{
     }
 
     public function getBoutique(){return $this->Boutique;}
-    public function getUsers(){return $this->Users;}
 
     // Va permettre de recup Boutique bdd
     public function chargementBoutique(){

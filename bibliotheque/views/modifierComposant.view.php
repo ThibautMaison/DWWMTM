@@ -1,7 +1,7 @@
 <?php 
 ob_start()
 ?>
-<form method="POST" action="<?= URL ?>Boutique/mv" enctype="multipart/form-data" class="d-grid gap-2 col-6 mx-auto mt-5">
+<form method="POST" action="<?= URL ?>Admin/modificationvalidationcomposant" enctype="multipart/form-data" class="d-grid gap-2 col-6 mx-auto mt-5">
     <div class="form-group mb-2" style="margin-bottom: 50px;margin-top: 50px;">
         <label class="text-white" for="Name">Name :</label>
         <input type="text" class="form-control" id="Name" name="Name" value="<?= $Composant->getName() ?>">

@@ -19,28 +19,34 @@
           <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="<?= URL ?>accueil">Accueil</a></li>
           <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="<?= URL ?>Boutique">Boutique</a></li>
           <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="<?= URL ?>Forum">Forum</a></li>
-          <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="<?= URL ?>Bou">test</a></li>
+          <?php
+          if (isset($_SESSION['Pseudo'])) {
+            if (($_SESSION['Role']) == 1) { ?>
+              <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="<?= URL ?>Admin">Admin</a></li>
+          <?php }
+          } else {
+          } ?>
           <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="<?= URL ?>Contact">Contact</a></li>
         </ul>
         <form class="">
           <?php
-        if (isset($_SESSION['Pseudo'])) { ?>
-          <div class="btn-group dropdown-end mx-5">
-            <a type="button" class="btn btn-outline-dark text-white rounded" data-bs-toggle="dropdown" aria-expanded="false">
-              COMPTE
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle ms-2" height="22" alt="" loading="lazy" />
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start bg-dark">
-              <li><a class="btn btn-dark text-white rounded d-flex justify-content-center" href="">Parametre</a></li>
-              <li><a class="btn btn-dark text-white rounded d-flex justify-content-center" href="<?= URL ?>logout">Deconnexion</a></li>
-            </ul>
-          </div>
-        <?php
-        } else { ?>
-          <a class="btn btn-outline-dark text-white me-2" href="<?= URL ?>connexion">CONNEXION</a>
-          <a class="btn btn-outline-dark text-white" href="<?= URL ?>inscription">INSCRIPTION</a>
-        <?php }
-        ?>
+          if (isset($_SESSION['Pseudo'])) { ?>
+            <div class="btn-group dropdown-end mx-5">
+              <a type="button" class="btn btn-outline-dark text-white rounded" data-bs-toggle="dropdown" aria-expanded="false">
+                COMPTE
+                <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle ms-2" height="22" alt="" loading="lazy" />
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start bg-dark">
+                <li><a class="btn btn-dark text-white rounded d-flex justify-content-center" href="">Parametre</a></li>
+                <li><a class="btn btn-dark text-white rounded d-flex justify-content-center" href="<?= URL ?>logout">Deconnexion</a></li>
+              </ul>
+            </div>
+          <?php
+          } else { ?>
+            <a class="btn btn-outline-dark text-white me-2" href="<?= URL ?>connexion">CONNEXION</a>
+            <a class="btn btn-outline-dark text-white" href="<?= URL ?>inscription">INSCRIPTION</a>
+          <?php }
+          ?>
 
         </form>
       </div>
@@ -78,7 +84,7 @@
               <a href="<?= URL ?>Boutique" class="text-white">Boutique</a>
             </p>
             <p>
-              <a href="<?= URL ?>Bou" class="text-white">Bou</a>
+              <a href="<?= URL ?>Admin" class="text-white">Admin</a>
             </p>
             <p>
               <a href="<?= URL ?>Contact" class="text-white">Contact</a>

@@ -43,6 +43,12 @@ class BoutiqueController {
         require "views/Boutique.view.php";
         // qd on require, tous ce qui est declarer ds fonction et va dans require
     }
+    public function afficherBoutiqueAdmin(){
+        // $Boutique recup le tableau des Boutique
+        $Boutique=$this->ComposantManager->getBoutique();
+        require "views/AdminBoutique.view.php";
+        // qd on require, tous ce qui est declarer ds fonction et va dans require
+    }
     public function afficherBoutiqueOrdinateur(){
         // $Boutique recup le tableau des Boutique
         $Boutique=$this->OrdinateurManager->getBoutique();
@@ -116,7 +122,7 @@ class BoutiqueController {
         // ajouter le Composant en bdd
         $this->ComposantManager->ajoutComposantBd($_POST["Name"],$_POST["Description"],$_POST["Prix"],$_POST["Lien"],$nomImageAjoute,$_POST["idCategorie"]);
         // redirige lutilisateur vers la pages des Boutique
-        header("Location: ".URL."Boutique");
+        header("Location: ".URL."Admin/boutique");
     }
 
     private function ajoutImage($file, $dir){
@@ -162,7 +168,7 @@ class BoutiqueController {
         // supprime ds bdd
         $this->ComposantManager->suppressionComposantBd($id);
         // redirige lutilisateur vers la pages des Boutique
-        header("Location: ".URL."Boutique");
+        header("Location: ".URL."Admin");
     }
 
     public function modificationComposant($id){
@@ -184,7 +190,7 @@ class BoutiqueController {
             $nomImageToAdd = $imageActuel;
         }
         $this->ComposantManager->modificationComposantBd((int)$_POST["identifiant"], $_POST["Name"], $_POST["Description"],$_POST["Prix"],$_POST["Lien"],$nomImageToAdd,$_POST["idCategorie"]);
-        header("Location: ".URL."Boutique");
+        header("Location: ".URL."Admin/boutique");
     }
 }
 ?>

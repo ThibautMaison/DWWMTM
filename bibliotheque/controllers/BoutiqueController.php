@@ -189,7 +189,7 @@ class BoutiqueController {
             $nomImageToAdd = $imageActuel;
         }
         $this->ComposantManager->modificationComposantBd((int)$_POST["identifiant"], $_POST["Name"], $_POST["Description"],$_POST["Prix"],$_POST["Lien"],$nomImageToAdd,$_POST["idCategorie"]);
-        // header("Location: ".URL."Admin/boutique");
+        header("Location: ".URL."Admin/boutique");
     }
 }
 ?>

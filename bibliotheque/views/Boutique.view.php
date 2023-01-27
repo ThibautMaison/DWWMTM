@@ -8,7 +8,7 @@ ob_start();
             Je précise que je suis totalement transparent dans le choix des marques.
             Vous pouvez faire vos choix en toute confiance !</h2>
     </div>
-    <img class="mx-5" src="/public/Accueil/backTEST.png" alt="main" style="width: 600px;">
+    <img class="mx-5" src="/public/Accueil/Frame 2.png" alt="main" style="width: 600px;">
 </div>
 <div id="target" class="d-flex col-10 mx-auto">
     <div class="d-flex gap-4 flex-column w-25 wrap me-3 mt-5">
@@ -33,7 +33,7 @@ ob_start();
         <?php
         for ($i = 0; $i < count($Boutique); $i++) : ?>
             <a href="<?= URL ?>Boutique/l/<?= $Boutique[$i]->getId() ?>" class="link-dark text-decoration-none">
-                <div class="d-grid ms-4 mb-4">
+                <div class="d-grid ms-2 mb-2">
                     <div class="card mx-auto bg-white ">
                         <div style="background-color: #c7c7c7;">
                             <img src="/public/images/<?= $Boutique[$i]->getImage() ?>" class=" d-grid gap-2 d-flex justify-content-center services-list my-3 mx-3" style="height: 200px;width: 200px;">

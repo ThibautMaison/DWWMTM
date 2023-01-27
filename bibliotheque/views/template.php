@@ -72,22 +72,22 @@
 
           <hr class="w-100 clearfix d-md-none" />
 
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto services-list mt-5 text-center">
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto services-list mt-5 text-center ">
             <h6 class="text-uppercase mb-4 font-weight-bold display-6">MENU</h6>
             <p>
-              <a href="<?= URL ?>accueil" class="text-white">Accueil</a>
+              <a href="<?= URL ?>accueil" class="text-white text-decoration-none">Accueil</a>
             </p>
             <p>
-              <a href="<?= URL ?>Forum" class="text-white">Forum</a>
+              <a href="<?= URL ?>Forum" class="text-white text-decoration-none">Forum</a>
             </p>
             <p>
-              <a href="<?= URL ?>Boutique" class="text-white">Boutique</a>
+              <a href="<?= URL ?>Boutique" class="text-white text-decoration-none">Boutique</a>
             </p>
             <p>
-              <a href="<?= URL ?>Admin" class="text-white">Admin</a>
+              <a href="<?= URL ?>Admin" class="text-white text-decoration-none">Admin</a>
             </p>
             <p>
-              <a href="<?= URL ?>Contact" class="text-white">Contact</a>
+              <a href="<?= URL ?>Contact" class="text-white text-decoration-none">Contact</a>
             </p>
           </div>
 

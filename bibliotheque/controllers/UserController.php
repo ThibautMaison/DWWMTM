@@ -11,10 +11,8 @@ class UserController {
     }
 
     public function afficherUsersAdmin(){
-        // $Boutique recup le tableau des Boutique
         $Users=$this->UsersManager->getUser();
         require "views/AdminUsers.view.php";
-        // qd on require, tous ce qui est declarer ds fonction et va dans require
     }
     
     public function connexion(){

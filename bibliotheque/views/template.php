@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch/dist/lux/bootstrap.min.css">
   <link rel="stylesheet" href="style.c">
 </head>
 
@@ -72,22 +73,22 @@
 
           <hr class="w-100 clearfix d-md-none" />
 
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto services-list mt-5 text-center ">
-            <h6 class="text-uppercase mb-4 font-weight-bold display-6">MENU</h6>
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto services-list mt-5 text-center">
+            <h6 class="text-uppercase mb-4 font-weight-bold display-6 text-white">MENU</h6>
             <p>
-              <a href="<?= URL ?>accueil" class="text-white text-decoration-none">Accueil</a>
+              <a href="<?= URL ?>accueil" class="text-white">Accueil</a>
             </p>
             <p>
-              <a href="<?= URL ?>Forum" class="text-white text-decoration-none">Forum</a>
+              <a href="<?= URL ?>Forum" class="text-white">Forum</a>
             </p>
             <p>
-              <a href="<?= URL ?>Boutique" class="text-white text-decoration-none">Boutique</a>
+              <a href="<?= URL ?>Boutique" class="text-white">Boutique</a>
             </p>
             <p>
-              <a href="<?= URL ?>Admin" class="text-white text-decoration-none">Admin</a>
+              <a href="<?= URL ?>Admin" class="text-white">Admin</a>
             </p>
             <p>
-              <a href="<?= URL ?>Contact" class="text-white text-decoration-none">Contact</a>
+              <a href="<?= URL ?>Contact" class="text-white">Contact</a>
             </p>
           </div>
 
@@ -96,7 +97,7 @@
           <hr class="w-100 clearfix d-md-none" />
 
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-5 text-center">
-            <h6 class="text-uppercase mb-4 font-weight-bold display-6">Contact</h6>
+            <h6 class="text-uppercase mb-4 font-weight-bold display-6 text-white">Contact</h6>
             <p><i class="fas fa-home mr-3"></i> Dunkerque, France</p>
             <p><i class="fas fa-envelope mr-3"></i> thibautmaison59@gmail.com</p>
             <p><i class="fas fa-phone mr-3"></i> + 06 06 06 06 06</p>

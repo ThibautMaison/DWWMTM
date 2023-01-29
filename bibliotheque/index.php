@@ -25,6 +25,9 @@ try {
             case "accueil":
                 require "views/accueil.view.php";
                 break;
+                case "test":
+                    require "views/test.view.php";
+                    break;
             case "Forum":
                 require "views/Forum.view.php";
                 break;

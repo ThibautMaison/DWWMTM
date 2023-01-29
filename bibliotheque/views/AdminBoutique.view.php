@@ -6,8 +6,8 @@ if (isset($_SESSION['Pseudo'])) {
     if (($_SESSION['Role']) == 1) { ?>
         <div class="container">
         <div class="text-center mb-5">
-                <div class="text-white my-4 fw-bold text-uppercase">
-                    <h2>Manage Utilisateurs</h2>
+                <div class="text-white my-4 fw-bold text-white text-uppercase">
+                    <h2 class="text-white">Manage Boutique</h2>
                 </div>
             </div>
             <table class="table table-striped table-hover text-white text-center mb-0">

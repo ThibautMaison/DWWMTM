@@ -2,7 +2,7 @@
 ob_start();
 ?>
 
-<form method="POST" class="d-grid gap-2 col-6 mx-auto mt-5" >
+<form method="POST" class="d-grid gap-2 col-6 mx-auto mt-5 " >
 <!-- enctype="multipart/form-data" obliger de le mettre quand on charge un fichier -->
     <div class="form-group mb-2" style="margin-top: 50px;" >
         <label class="text-white"></label>

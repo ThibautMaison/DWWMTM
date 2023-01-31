@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculateur d'IMC</title>
+  <link rel="stylesheet" href="/IMC/style.css">
+</head>
+<body>
+  <div>
+    <h1>Calculateur d'IMC</h1>
+    <label for="weight">Poids (en kg) :</label>
+    <input type="text" id="weight" name="weight">
+    <br><br>
+    <label for="height">Taille (en mètres) :</label>
+    <input type="text" id="height" name="height">
+    <br><br>
+    <button class="btn">Calculer</button>
+    <p id="imc-result"></p>
+  </div>
+
+
+  <script>
+// Sélectionne l'élément du formulaire avec l'ID "weight"
+const weight = document.querySelector("#weight");
+
+// Sélectionne l'élément du formulaire avec l'ID "height"
+const height = document.querySelector("#height");
+
+// Sélectionne le bouton avec la classe "btn"
+const btn = document.querySelector(".btn")
+
+// Sélectionne l'élément du formulaire avec l'ID "imc-result"
+const result = document.querySelector("#imc-result");
+
+// Définit un écouteur d'événement "click" sur le bouton
+btn.addEventListener("click", function () {
+  // Vérifie si les valeurs de poids et de hauteur sont entrées
+  if (!weight.value || !height.value) {
+    // Si l'une des valeurs est manquante, affiche un message d'erreur
+    result.innerHTML = "Les deux valeurs sont obligatoires.";
+    return;
+  }
+
+  // Calcule l'IMC en divisant le poids par le carré de la hauteur
+  const imc = weight.value / (height.value * height.value);
+
+  // Initialise une variable pour le statut de santé
+  let healthStatus = "";
+
+  // Vérifie l'IMC et définit le statut de santé en conséquence
+  if (imc < 18.5) {
+    result.style.color = "blue";
+    healthStatus = "Vous êtes en sous-poids.";
+  } else if (imc >= 18.5 && imc <= 24.9) {
+    result.style.color = "green";
+    healthStatus = "Vous avez un poids normal.";
+  } else if (imc >= 25 && imc <= 29.9) {
+    result.style.color = "purple";
+    healthStatus = "Vous êtes en surpoids.";
+  } else {
+    result.style.color = "red";
+    healthStatus = "Vous êtes obèse.";
+  }
+
+  // Affiche le résultat de l'IMC et le statut de santé
+  result.innerHTML = "Votre IMC est de " + imc.toFixed(2) + " " + healthStatus;
+})
+  </script>
+  </body>
+</html>

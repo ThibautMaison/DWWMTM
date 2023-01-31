@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var toDoList = [];
+
+        function addToDo() {
+            var task = document.getElementById("task").value;
+            toDoList.push(task);
+            displayToDoList();
+            document.getElementById("task").value = "";
+        }
+
+        function deleteToDo(index) {
+            toDoList.splice(index, 1);
+            displayToDoList();
+        }
+
+        function editToDo(index) {
+            var task = prompt("Enter updated task", toDoList[index]);
+            toDoList[index] = task;
+            displayToDoList();
+        }
+
+        function displayToDoList() {
+            var list = "<ul>";
+            for (var i = 0; i < toDoList.length; i++) {
+                list += "<li>" + toDoList[i] + " <button onclick='editToDo(" + i + ")'>Edit</button> <button onclick='deleteToDo(" + i + ")'>Delete</button></li>";
+            }
+            list += "</ul>";
+            document.getElementById("toDoList").innerHTML = list;
+        }
+    </script>
+</head>
+
+<body>
+
+    <body>
+        <input type="text" id="task">
+        <button onclick="addToDo()">Add To-Do</button>
+        <div id="toDoList"></div>
+    </body>
+
+</html>

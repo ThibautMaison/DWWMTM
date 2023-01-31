@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h2>Calcul de l'aire et du périmètre d'un cercle</h2>
+        <label for="">Saisir la factorielle voulue :</label>
+        <input type="number" id="factorielle" />
+        <button class="btn">Valider</button>
+        <div id="resultat"></div>
+    </div>
+    <div>
+        <h2>Calcul de l'aire et du périmètre d'un cercle</h2>
+        <p>Entrez le rayon du cercle : <input type="number" id="rayon"></p>
+        <input type="checkbox" id="checkbox">Perimetre
+        <div id="result"></div>
+    </div>
+    <script>
+        const inputFactorielle = document.querySelector("#factorielle")
+        const btn = document.querySelector(".btn")
+        const divResultat = document.querySelector("#resultat")
+
+        btn.addEventListener("click", function () {
+            let nombre = inputFactorielle.value;
+            let f = 1;
+            for (let i = 1; i <= nombre; i++) {
+                f = f * i;
+            }
+            divResultat.innerHTML = "Result " + nombre + " = " + f;
+        })
+
+        const inputRayon = document.querySelector("#rayon")
+        const pi = Math.PI;
+        const inputCheckbox = document.querySelector("#checkbox")
+        const Result = document.querySelector("#result")
+        let r = inputRayon.value;
+        inputCheckbox.addEventListener("click", function () {
+            if (inputCheckbox.checked) {
+                const perimetre = 2 * pi * r;
+                Result.style.color = "blue";
+                Result.innerHTML =
+                    "Le périmètre du cercle est : " + perimetre;
+            } else {
+                const aire = pi * r * r;
+                Result.style.color = "red";
+                Result.innerHTML = "L'aire du cercle est : " + aire
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

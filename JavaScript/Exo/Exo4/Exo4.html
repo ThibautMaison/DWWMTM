@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="name">
+    <button class="btn">Remove Person</button>
+    <div id="result"></div>
+
+    <script>
+
+        const personne = [
+            { name: `Riri`, age: 25 },
+            { name: 'Fifi', age: 23 },
+            { name: 'Loulou', age: 22 },
+            { name: 'Titi', age: 24 }
+        ];
+        const Name = document.querySelector('#name')
+        const btn = document.querySelector(".btn")
+        const result = document.querySelector('#result')
+
+        btn.addEventListener("click", function () {
+            const filtrepersonne = personne.filter(personne => personne.name != Name.value);
+            result.innerHTML =JSON.stringify(filtrepersonne)
+        })
+
+        result.innerHTML =JSON.stringify(personne)
+    </script>
+</body>
+
+</html>

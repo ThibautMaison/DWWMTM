@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Exo/Quiz/style.css">
+</head>
+
+<body>
+    <h1>Quiz</h1>
+    <div id="Question">
+        <div id="Question1">
+            <p>À quoi correspond cette image ?</p>
+            <input type="radio" name="question1" value="a">Carte graphique <br>
+            <input type="radio" name="question1" value="b">Ventilo<br>
+            <input type="radio" name="question1" value="c">Processeur<br>
+            <img src="/Exo/Quiz/img/cartegraphique.png" style="width: 150px;" alt="">
+        </div>
+        <div id="Question2">
+            <p>À quoi correspond cette image ?</p>
+            <input type="radio" name="question2" value="a">GPU<br>
+            <input type="radio" name="question2" value="b">Processeur<br>
+            <input type="radio" name="question2" value="c">ram<br>
+            <img src="/Exo/Quiz/img/Processor-PNG-Images-HD.png" style="width: 150px;" alt="">
+        </div>
+        <div id="Question3">
+            <p>À quoi correspond cette image ?</p>
+            <input type="radio" name="question3" value="a">Carte mere<br>
+            <input type="radio" name="question3" value="b">Boitier<br>
+            <input type="radio" name="question3" value="c">Ram<br>
+            <img src="/Exo/Quiz/img/RAM.png" style="width: 100px;height: 100px" alt="">
+        </div>
+        <div id="Question4">
+            <p>À quoi correspond cette image ?</p>
+            <input type="radio" name="question4" value="a">Boitier<br>
+            <input type="radio" name="question4" value="b">Ssd<br>
+            <input type="radio" name="question4" value="c">Ram<br>
+            <img src="/Exo/Quiz/img/tour.png" style="width: 100px;height: 100px" alt="">
+        </div>
+        <div id="Question5">
+            <p>À quoi correspond cette image ?</p>
+            <input type="radio" name="question5" value="a">Souris<br>
+            <input type="radio" name="question5" value="b">clavier<br>
+            <input type="radio" name="question5" value="c">Ssd<br>
+            <img src="/Exo/Quiz/img/clavier.png" style="width: 100px;height: 100px" alt="">
+        </div>
+            <input type="button" value="Valider" onclick="checkAnswers()">
+
+        </div>
+        <div id="result"></div>
+
+        <script src="/Exo/Quiz/script.js"></script>
+</body>
+
+</html>

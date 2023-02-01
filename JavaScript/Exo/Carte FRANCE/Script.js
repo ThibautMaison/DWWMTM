@@ -33,7 +33,7 @@ const regionData = [
 
 ];
 for (let i = 0; i < TabRegion.length; i++) {
-    TabRegion[i].addEventListener("click", function () {
+    TabRegion[i].addEventListener("mouseenter", function () {
         result.innerHTML = "Nom : " + regionData[i].name + "<br>" + "Longitude : " + regionData[i].longitude + "<br>" + "Superficie : " + regionData[i].area + "<br>" + "Population : " + regionData[i].population;
     });
 }

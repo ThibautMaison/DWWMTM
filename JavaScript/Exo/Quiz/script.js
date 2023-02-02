@@ -18,10 +18,10 @@ function checkAnswers() {
       if (radios[j].checked) {
         if (radios[j].value === answers[i]) {
           score++;
-          question.style.backgroundColor = "green";
+          question.style.background = "green";
           break;
         } else {
-          question.style.backgroundColor = "red";
+          question.style.background = "red";
           break;
         }
       }
@@ -37,7 +37,7 @@ function checkAnswers() {
   resetButton.addEventListener("click", function() {
     for (let i = 0; i < total; i++) {
       let question = document.querySelector("#Question" + (i + 1));
-      question.style.backgroundColor = "";
+      question.style.background = "";
       let radios = document.getElementsByName("question" + (i + 1));
       for (let j = 0; j < radios.length; j++) {
         radios[j].checked = false;

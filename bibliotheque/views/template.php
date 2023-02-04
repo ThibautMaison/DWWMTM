@@ -8,7 +8,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch/dist/lux/bootstrap.min.css">
-  <link rel="stylesheet" href="style.c">
+  <link rel="stylesheet" href="/style.css">
 </head>
 
 <body style="background-color: #0C0C0C;">
@@ -115,7 +115,7 @@
       </section>
     </div>
   </footer>
-
+<script src="/scriptMDP.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

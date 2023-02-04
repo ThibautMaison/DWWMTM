@@ -21,42 +21,14 @@ ob_start();
 <div id="target" class="container-fluid pt-5">
     <div class="row px-xl-3">
         <div class="col-lg-3 col-md-4">
-            <div class="p-4 mb-30 rounded mx-5 " style="background-color: #c7c7c7;">
-                <h3 class="mb-4 gap-2 d-flex justify-content-center text-uppercase fs-2 fw-bold">Produits</h3>
-                <a class="btn btn-dark rounded d-flex justify-content-center rounded text-white my-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique#target">Tous les produits</a>
-                <a class="btn rounded text-dark d-flex justify-content-center my-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique/ordinateur#target">Ordinateur</a>
-                <a class="btn rounded text-dark d-flex justify-content-center my-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique/ecran#target">Ecrans</a>
-                <a class="btn rounded text-dark d-flex justify-content-center my-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique/clavier#target">Claviers</a>
-                <a class="btn rounded text-dark d-flex justify-content-center my-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique/souris#target">Souris</a>
-                <a class="btn rounded text-dark d-flex justify-content-center my-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique/casque#target">Casques</a>
-                <a class="btn rounded text-dark d-flex justify-content-center my-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique/tapisdesouris#target">Tapis de souris</a>
-                <a class="btn rounded text-dark d-flex justify-content-center my-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique/chaise#target">Chaise</a>
-                <a class="btn rounded text-dark d-flex justify-content-center my-2 gap-2 fw-semibold fst-italic" href="<?= URL ?>Boutique/accessoire#target">Accessoires</a>
-            </div>
+        <?php require "views/sidebar.view.php"; ?>
 
             <div class="p-4 mb-30 rounded mt-4 mx-5" style="background-color: #c7c7c7;">
                 <p class="mb-4 gap-2 text-center fw-semibold fst-italic">Découvrez ce que j'utilise comme matériel au quotidien</p>
-                <a class="btn btn-primary rounded-pill text-white border-primary mt-3 d-flex justify-content-center text-uppercase fs-5 fw-bold" href="<?= URL ?>Boutique/stuffperso">mon stuff</a>
+                <a class="btn btn-primary rounded-pill text-white border-primary mt-3 d-flex justify-content-center text-uppercase fs-5 fw-bold" href="<?= URL ?>Boutique/stuffperso#target">mon stuff</a>
             </div>
         </div>
-        <div class="col py-3 container">
-            <div class="d-flex flex-wrap w-100 mx-3">
-                <?php
-                for ($i = 0; $i < count($Boutique); $i++) : ?>
-                    <a href="<?= URL ?>Boutique/l/<?= $Boutique[$i]->getId() ?>" class="link-dark text-decoration-none">
-                        <div class="d-grid ms-4 mb-4">
-                            <div class="card mx-auto bg-white ">
-                                <div style="background-color: #c7c7c7;">
-                                    <img src="/public/images/<?= $Boutique[$i]->getImage() ?>" class=" d-grid gap-2 d-flex justify-content-center services-list my-3 mx-3" style="height: 225px;width: 250px;">
-                                </div>
-                                <h5 class=" d-grid gap-2 mx-auto d-flex justify-content-center my-3 "><?= $Boutique[$i]->getName() ?></h5>
-                                <h5 class=" d-grid gap-2 mx-auto d-flex justify-content-center mb-3"><?= $Boutique[$i]->getPrix() ?>€</h5>
-                            </div>
-                        </div>
-                    </a>
-                <?php endfor ?>
-            </div>
-        </div>
+        <?php require "AllComposant.view.php";?>
     </div>
 </div>
 <?php

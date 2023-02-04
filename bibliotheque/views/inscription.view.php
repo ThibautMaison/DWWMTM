@@ -16,8 +16,14 @@ ob_start();
     </div>
     <div class="form-group mb-4">
         <label class="text-white" for="Password"></label>
-        <input type="password" class="form-control" id="Password" name="Password" placeholder="Password :">
+        <input type="password" class="form-control" id="passwordtest" name="Password" placeholder="Password :">
     </div>
+    <div class="validator-criters">
+            <span style="display: block;font-size: 13px;margin: 5px 0;" class="chiffre">Votre mot de passe doit avoir 1 chiffre</span>
+            <span style="display: block;font-size: 13px;margin: 5px 0;" class="majuscule">Votre mot de passe doit avoir 1 lettre majuscule</span>
+            <span style="display: block;font-size: 13px;margin: 5px 0;" class="minuscule">Votre mot de passe doit avoir 1 lettre minuscule</span>
+            <span style="display: block;font-size: 13px;margin: 5px 0;" class="generique">Votre mot doit comporter 8 Caractères au minimum</span>
+        </div>
   <!-- 2 column grid layout with text inputs for the first and last names -->
 
   <!-- Checkbox -->
@@ -61,7 +67,6 @@ ob_start();
         </button>
     </div>
 </form>
-
 <?php
 $content=ob_get_clean();
 require "template.php";

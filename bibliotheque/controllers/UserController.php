@@ -29,20 +29,15 @@ class UserController {
 
     public function ajoutUsersValidation(){
         $this->UsersManager->ajoutUsersBd($_POST["Pseudo"],$_POST["Email"],$_POST["Password"]);
-        $_SESSION['alert']= [ 
-        "type"=> "success",        
-    ];
         header("Location: ".URL."connexion"); 
     
         }
         public function ajoutUsersValidationAdmin(){
             $this->UsersManager->ajoutUsersBd($_POST["Pseudo"],$_POST["Email"],$_POST["Password"]);
-            $_SESSION['alert']= [ 
-            "type"=> "success",        
-        ];
             header("Location: ".URL."Admin/users"); 
         
             }
+
     public function UsersValidation(){
         $this->UsersManager->ConnexionUser($_POST["Pseudo"],$_POST["Password"]);
         header("Location: ".URL."accueil"); 

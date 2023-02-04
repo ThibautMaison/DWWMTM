@@ -25,9 +25,9 @@ try {
             case "accueil":
                 require "views/accueil.view.php";
                 break;
-                case "test":
-                    require "views/test.view.php";
-                    break;
+            case "test":
+                require "views/test.view.php";
+                break;
             case "Forum":
                 require "views/Forum.view.php";
                 break;
@@ -37,24 +37,24 @@ try {
                 } else if ($url[1] === "boutique") {
                     // afficher le Users concerner
                     $ComposantController->afficherBoutiqueAdmin();
-                }else if ($url[1] === "users") {
+                } else if ($url[1] === "users") {
                     // afficher le Users concerner
                     $UsersController->afficherUsersAdmin();
                 } else if ($url[1] === "ajoutuser") {
                     $UsersController->ajoutUsers();
-                }else if ($url[1] === "ajoutvalidationuser") {
+                } else if ($url[1] === "ajoutvalidationuser") {
                     $UsersController->ajoutUsersValidationAdmin();
-                }else if ($url[1] === "ajoutcomposant") {
+                } else if ($url[1] === "ajoutcomposant") {
                     $ComposantController->ajoutComposant();
-                }else if ($url[1] === "ajoutvalidationcomposant") {
+                } else if ($url[1] === "ajoutvalidationcomposant") {
                     $ComposantController->ajoutComposantValidation();
-                }else if ($url[1] === "modificationcomposant") {
+                } else if ($url[1] === "modificationcomposant") {
                     $ComposantController->modificationComposant((int)$url[2]);
-                }else if ($url[1] === "modificationvalidationcomposant") {
+                } else if ($url[1] === "modificationvalidationcomposant") {
                     $ComposantController->modificationComposantValidation();
-                }else if ($url[1] === "modificationuser") {
+                } else if ($url[1] === "modificationuser") {
                     $UsersController->modificationUsers((int)$url[2]);
-                }else if ($url[1] === "modificationvalidationuser") {
+                } else if ($url[1] === "modificationvalidationuser") {
                     $UsersController->modificationUsersValidation();
                 } else if ($url[1] === "supprimercomposant") {
                     $ComposantController->suppressionComposant((int)$url[2]);
@@ -85,36 +85,48 @@ try {
                 };
                 break;
             case "Boutique":
-                // si on a rien en tant que 2ème élément dans mon URL
-                if (empty($url[1])) {
-                    $ComposantController->afficherBoutique();
-                } else if ($url[1] === "l") {
-                    // afficher le Composant concerner
-                    $ComposantController->afficherComposant((int)$url[2]);
-                } else if ($url[1] === "ordinateur") {
-                    $ComposantController->afficherBoutiqueOrdinateur();
-                } else if ($url[1] === "ecran") {
-                    $ComposantController->afficherBoutiqueEcran();
-                } else if ($url[1] === "clavier") {
-                    $ComposantController->afficherBoutiqueClavier();
-                } else if ($url[1] === "souris") {
-                    $ComposantController->afficherBoutiqueSouris();
-                } else if ($url[1] === "casque") {
-                    $ComposantController->afficherBoutiqueCasque();
-                } else if ($url[1] === "tapisdesouris") {
-                    $ComposantController->afficherBoutiqueTapisdesouris();
-                } else if ($url[1] === "chaise") {
-                    $ComposantController->afficherBoutiqueChaise();
-                } else if ($url[1] === "accessoire") {
-                    $ComposantController->afficherBoutiqueAccessoire();
-                } else if ($url[1] === "stuffperso") {
-                    $ComposantController->afficherBoutiqueStuffperso();
-                }else {
-                    // lever l'erreur si page nexiste pas
+                $boutiqueId = null;
+                switch ($url[1] ?? '') {
+                    case "l":
+                        $ComposantController->afficherComposant((int)$url[2]);
+                        break;
+                    case "ordinateur":
+                        $boutiqueId = 1;
+                        break;
+                    case "ecran":
+                        $boutiqueId = 2;
+                        break;
+                    case "clavier":
+                        $boutiqueId = 3;
+                        break;
+                    case "souris":
+                        $boutiqueId = 4;
+                        break;
+                    case "casque":
+                        $boutiqueId = 5;
+                        break;
+                    case "tapisdesouris":
+                        $boutiqueId = 6;
+                        break;
+                    case "chaise":
+                        $boutiqueId = 7;
+                        break;
+                    case "accessoire":
+                        $boutiqueId = 9;
+                        break;
+                    case "stuffperso":
+                        $ComposantController->afficherBoutiqueMonStuff();
+                        break;
+                }
+
+                if ($boutiqueId !== null) {
+                    $ComposantController->afficherBoutiqueParCategorie($boutiqueId);
+                } elseif (empty($url[1])) {
+                    $ComposantController->afficherBoutiqueParCategorie();
+                } else {
                     throw new Exception("La page n'existe pas");
                 }
                 break;
-                // c'est une sorte de else ! De plus on lève lerreur
             default:
                 throw new Exception("La page n'existe pas");
         }

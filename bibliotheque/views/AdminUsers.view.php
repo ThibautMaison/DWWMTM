@@ -42,7 +42,7 @@ if (isset($_SESSION['Pseudo'])) {
                                     <form action="<?= URL ?>Admin/modificationuser/<?= $Users[$i]->getId() ?>" method="POST">
                                         <button class="btn btn-warning mx-auto d-flex justify-content-center me-3" type="submit">Modifier</button>
                                     </form>
-                                    <form action="" onSubmit="return confirm('Voulez-vous vraiment supprimer le produit ?')" method="POST">
+                                    <form action="<?= URL ?>Admin/supprimeruser/<?= $Users[$i]->getId() ?>" onSubmit="return confirm('Voulez-vous vraiment supprimer le produit ?')" method="POST">
                                         <button class="btn btn-danger mx-auto d-flex justify-content-center" type="submit">Supprimer</button>
                                     </form>
                                 </div>

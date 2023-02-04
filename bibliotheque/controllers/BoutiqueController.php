@@ -2,82 +2,56 @@
 require_once "models/ComposantManager.class.php";
 
 class BoutiqueController {
+    private $managers = [
+        1 => 'Ordinateur',
+        2 => 'Ecran',
+        3 => 'Clavier',
+        4 => 'Souris',
+        5 => 'Casque',
+        6 => 'Tapisdesouris',
+        7 => 'Chaise',
+        9 => 'Accessoire'
+    ];
     private $ComposantManager;
-    private $OrdinateurManager;
-    private $EcranManager;
-    private $ClavierManager;
-    private $SourisManager;
-    private $CasqueManager;
-    private $TapisdesourisManager;
-    private $ChaiseManager;
-    private $AccessoireManager;
     private $StuffpersoManager;
 
     public function __construct(){
-        // on instancie et charge les Boutique
+        $this->instantiateManagers();
+    }
+    
+    private function instantiateManagers() {
+        foreach ($this->managers as $categoryId => $managerClass) {
+            $this->{$managerClass} = new ComposantManager;
+            $this->{$managerClass}->chargerBoutiqueParCategorie($categoryId);
+        }
         $this->ComposantManager=new ComposantManager;
         $this->ComposantManager->chargementBoutique();
-        $this->OrdinateurManager=new ComposantManager;
-        $this->OrdinateurManager->chargementBoutiqueOrdinateur();
-        $this->EcranManager=new ComposantManager;
-        $this->EcranManager->chargementBoutiqueEcran();
-        $this->ClavierManager=new ComposantManager;
-        $this->ClavierManager->chargementBoutiqueClavier();
-        $this->SourisManager=new ComposantManager;
-        $this->SourisManager->chargementBoutiqueSouris();
-        $this->CasqueManager=new ComposantManager;
-        $this->CasqueManager->chargementBoutiqueCasque();
-        $this->TapisdesourisManager=new ComposantManager;
-        $this->TapisdesourisManager->chargementBoutiqueTapisdesouris();
-        $this->ChaiseManager=new ComposantManager;
-        $this->ChaiseManager->chargementBoutiqueChaise();
-        $this->AccessoireManager=new ComposantManager;
-        $this->AccessoireManager->chargementBoutiqueAccessoire();
         $this->StuffpersoManager=new ComposantManager;
         $this->StuffpersoManager->chargementBoutiqueStuffperso();
     }
-    
-    public function afficherBoutique(){
-        $Boutique=$this->ComposantManager->getBoutique();
-        require "views/Boutique.view.php";
+
+    public function afficherBoutiqueParCategorie($categoryId = null){
+        if ($categoryId === null) {
+            $Boutique=$this->ComposantManager->getBoutique();
+            require "views/Boutique.view.php";
+            return;
+        }
+
+        $managerClass = $this->managers[$categoryId];
+        if (!$managerClass) {
+            throw new Exception("Invalid category id: {$categoryId}");
+        }
+        
+        $Boutique = $this->{$managerClass}->getBoutique();
+        require "views/{$managerClass}.view.php";
     }
+    
     public function afficherBoutiqueAdmin(){
         $Boutique=$this->ComposantManager->getBoutique();
         require "views/AdminBoutique.view.php";
     }
-    public function afficherBoutiqueOrdinateur(){
-        $Boutique=$this->OrdinateurManager->getBoutique();
-        require "views/Ordinateur.view.php";
-    }
-    public function afficherBoutiqueEcran(){
-        $Boutique=$this->EcranManager->getBoutique();
-        require "views/Ecran.view.php";
-    }
-    public function afficherBoutiqueClavier(){
-        $Boutique=$this->ClavierManager->getBoutique();
-        require "views/Clavier.view.php";
-    }
-    public function afficherBoutiqueSouris(){
-        $Boutique=$this->SourisManager->getBoutique();
-        require "views/Souris.view.php";
-    }
-    public function afficherBoutiqueCasque(){
-        $Boutique=$this->CasqueManager->getBoutique();
-        require "views/Casque.view.php";
-    }
-    public function afficherBoutiqueTapisdesouris(){
-        $Boutique=$this->TapisdesourisManager->getBoutique();
-        require "views/Tapisdesouris.view.php";
-    }
-    public function afficherBoutiqueChaise(){
-        $Boutique=$this->ChaiseManager->getBoutique();
-        require "views/Chaise.view.php";
-    }
-    public function afficherBoutiqueAccessoire(){
-        $Boutique=$this->AccessoireManager->getBoutique();
-        require "views/Accessoire.view.php";
-    }
-    public function afficherBoutiqueStuffperso(){
+
+    public function afficherBoutiqueMonStuff(){
         $Boutique=$this->StuffpersoManager->getBoutique();
         require "views/Stuffperso.view.php";
     }
@@ -125,7 +99,7 @@ class BoutiqueController {
         $nomImage= $this->ComposantManager->getComposantById($id)->getImage();
         unlink("public/images/".$nomImage);
         $this->ComposantManager->suppressionComposantBd($id);
-        header("Location: ".URL."Admin");
+        header("Location: ".URL."Admin/Boutique");
     }
 
     public function modificationComposant($id){

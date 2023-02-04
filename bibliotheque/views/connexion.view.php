@@ -63,31 +63,6 @@ ob_start();
         </button>
     </div>
 </form>
-
-<?php
-
-if (isset($_POST['Connecter'])) {
-    $Pseudo = $_POST['Pseudo'];
-    $Password = $_POST['Password'];
-
-    $db = new PDO("mysql:host=localhost;dbname=pcsite;charset=utf8", "root", "");
-
-    $sql = "select * from Users where Pseudo = '$Pseudo' ";
-    $result = $db->prepare($sql);
-    $result->execute();
-    if ($result->rowCount() > 0) {
-        $data = $result->fetchAll();
-        if (password_verify($Password, $data[0]['Password'])) {
-            echo '<br><br>connecter avec succès!';
-            $_SESSION['Pseudo'] = $Pseudo;
-            header("Location: " . URL . "accueil");
-        } else {
-            echo "reessaye";
-        }
-    }
-}
-
-?>
 <?php
 $content = ob_get_clean();
 require "template.php";

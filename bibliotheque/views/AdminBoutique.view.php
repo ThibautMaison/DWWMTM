@@ -6,7 +6,7 @@ if (isset($_SESSION['Pseudo'])) {
     if (($_SESSION['Role']) == 1) { ?>
         <div class="container">
         <div class="text-center mb-5">
-                <div class="text-white my-4 fw-bold text-white text-uppercase">
+                <div class=" my-4 fw-bold text-uppercase">
                     <h2 class="text-white">Manage Boutique</h2>
                 </div>
             </div>
@@ -24,7 +24,7 @@ if (isset($_SESSION['Pseudo'])) {
 
                     </tr>
                 </thead>
-                <div class="d-grid gap-2 col-6 mx-auto mb-4">
+                <div class="d-grid gap-2 col-6 mx-auto">
                     <a href="<?= URL ?>Admin/ajoutcomposant" class="btn btn-success">Ajouter composant</a>
                 </div>
                 <tbody>
@@ -47,7 +47,7 @@ if (isset($_SESSION['Pseudo'])) {
                                     <form action="<?= URL ?>Admin/modificationcomposant/<?= $Boutique[$i]->getId() ?>" method="POST">
                                         <button class="btn btn-warning mx-auto d-flex justify-content-center me-3" type="submit">Modifier</button>
                                     </form>
-                                    <form action="" onSubmit="return confirm('Voulez-vous vraiment supprimer le produit ?')" method="POST">
+                                    <form action="<?= URL ?>Admin/supprimercomposant/<?= $Boutique[$i]->getId() ?>" onSubmit="return confirm('Voulez-vous vraiment supprimer le produit ?')" method="POST">
                                         <button class="btn btn-danger mx-auto d-flex justify-content-center" type="submit">Supprimer</button>
                                     </form>
                                 </div>

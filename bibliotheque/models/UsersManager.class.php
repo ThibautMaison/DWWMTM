@@ -98,7 +98,7 @@ public function modificationUsersBd($id,$Pseudo,$Email,$Role){
 public function suppressionUsersBd($id){
     //  il est interdit de faire une concatenation avec $id, pour la securité
     $req="
-    DELETE from boutique where id= :idUsers";
+    DELETE from users where id= :idUsers";
     // connexion à bd
     $stmt=$this->getBdd()->prepare($req);
     $stmt->bindValue(":idUsers",$id,PDO::PARAM_INT);

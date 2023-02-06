@@ -2,7 +2,7 @@
 ob_start()?>
             <div class="container px-4 px-lg-5 p-5">
                 <div class="row gx-4 gx-lg-5 align-items-center p-5">
-                    <div class="col-md-6 p-5"><img class="card-img-top mb-5 mb-md-0 rounded" src="<?=URL ?>public/images/<?= $film->getImage() ?>" alt="..." /></div>
+                    <div class="col-md-6 p-5"><img class="card-img-top mb-5 mb-md-0 rounded btn-outline-light" src="<?=URL ?>public/images/<?= $film->getImage() ?>" alt="..." /></div>
                     <div class="col-md-6 p-5">
                         <h1 class="display-5 text-white text-uppercase fw-bolder"><?= $film->getName() ?></h1>
                         <div class="fs-5 mb-4">

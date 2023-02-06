@@ -21,7 +21,6 @@ ob_start();
 <div id="target" class="container-fluid pt-5">
     <div class="row px-xl-3">
         <div class="col-lg-3 col-md-4">
-        <?php require "views/sidebar.view.php"; ?>
 
             <div class="p-4 mb-30 rounded mt-4 mx-5" style="background-color: #c7c7c7;">
                 <p class="mb-4 gap-2 text-center fw-semibold fst-italic">Découvrez ce que j'utilise comme matériel au quotidien</p>
